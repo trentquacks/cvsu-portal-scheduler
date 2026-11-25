@@ -1,0 +1,232 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card">
+      <div class="card-header justify-content-between align-items-center">
+        <p class="mb-0">My Profile</p>
+      </div>
+      <div class="card-body pt-4">
+        <div class="p-3 p-md-5">
+          <h5 class="mb-3">Personal Info</h5>
+          <div class="row">
+            <div class="col-xl-8 ms-md-3">
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">First Name :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.first_name }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Middle Name :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.middle_name }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Last Name :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.last_name }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Suffix :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.suffix }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Sex :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.sex }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Date of Birth :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.date_of_birth }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Civil Status :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.civil_status }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Religion :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.religion }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Citizenship :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.citizenship }}</span>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Secondary School :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.secondary_school }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="mt-4 mb-3">Address</h5>
+          <div class="row">
+            <div class="col-xl-8 ms-md-3">
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">District/Province :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.province }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">City/Municipality :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.city }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Barangay :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.barangay }}</span>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">House/Blk/Lot/Street :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.street_address }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="mt-4 mb-3">Contact Info</h5>
+          <div class="row">
+            <div class="col-xl-8 ms-md-3">
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">CvSU Email :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.cvsu_email }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Temporary Password :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.temp_password }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Mobile # :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.mobile_number }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Personal Email :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.personal_email }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Guardian :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.guardian_name }}</span>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Guardian # :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.guardian_number }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="mt-4 mb-3">Enrollment Info</h5>
+          <div class="row">
+            <div class="col-xl-8 ms-md-3">
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Student Number :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.student_number }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Course :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.course_code }}</span>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Year Admitted :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.year_admitted }}</span>
+                </div>
+              </div>
+              <div class="row mb-0">
+                <div class="col-md-3">
+                  <span class="fw-semibold fs-14">Sem Admitted :</span>
+                </div>
+                <div class="col-md-9">
+                  <span class="fs-15">{{ user.sem_admitted }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

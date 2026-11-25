@@ -1,0 +1,999 @@
+{
+  "snapshot_tag": "AY2026-2027-FIRST-BSCS",
+  "academic_year": "2026-2027",
+  "semester": "FIRST",
+  "program_code": "BSCS",
+  "offerings": [
+    {
+      "schedule_code": "202610101",
+      "course_code": "GNED 02",
+      "section_name": "BSCS-1A",
+      "instructor": "MENDOZA, LIZA",
+      "max_capacity": 40,
+      "enrolled_count": 34,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 8, "end_hour": 10, "room": "A-401"},
+        {"meeting_type": "LEC", "day": "W", "start_hour": 8, "end_hour": 9, "room": "A-401"}
+      ]
+    },
+    {
+      "schedule_code": "202610102",
+      "course_code": "GNED 02",
+      "section_name": "BSCS-1B",
+      "instructor": "MENDOZA, LIZA",
+      "max_capacity": 40,
+      "enrolled_count": 31,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 13, "end_hour": 15, "room": "A-402"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 13, "end_hour": 14, "room": "A-402"}
+      ]
+    },
+    {
+      "schedule_code": "202610103",
+      "course_code": "GNED 05",
+      "section_name": "BSCS-1A",
+      "instructor": "VILLAR, MARITES",
+      "max_capacity": 40,
+      "enrolled_count": 35,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 10, "end_hour": 12, "room": "A-405"},
+        {"meeting_type": "LEC", "day": "W", "start_hour": 10, "end_hour": 11, "room": "A-405"}
+      ]
+    },
+    {
+      "schedule_code": "202610104",
+      "course_code": "GNED 05",
+      "section_name": "BSCS-1B",
+      "instructor": "VILLAR, MARITES",
+      "max_capacity": 40,
+      "enrolled_count": 28,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 15, "end_hour": 17, "room": "A-405"},
+        {"meeting_type": "LEC", "day": "S", "start_hour": 9, "end_hour": 10, "room": "A-405"}
+      ]
+    },
+    {
+      "schedule_code": "202610105",
+      "course_code": "GNED 11",
+      "section_name": "BSCS-1A",
+      "instructor": "CRUZ, LORENA",
+      "max_capacity": 40,
+      "enrolled_count": 36,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 8, "end_hour": 10, "room": "A-404"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 8, "end_hour": 9, "room": "A-404"}
+      ]
+    },
+    {
+      "schedule_code": "202610106",
+      "course_code": "COSC 50A",
+      "section_name": "BSCS-1A",
+      "instructor": "SANTOS, EDGARDO",
+      "max_capacity": 40,
+      "enrolled_count": 38,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 13, "end_hour": 15, "room": "RM.7"},
+        {"meeting_type": "LEC", "day": "W", "start_hour": 13, "end_hour": 14, "room": "RM.7"}
+      ]
+    },
+    {
+      "schedule_code": "202610107",
+      "course_code": "COSC 50A",
+      "section_name": "BSCS-1B",
+      "instructor": "SANTOS, EDGARDO",
+      "max_capacity": 40,
+      "enrolled_count": 29,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 15, "end_hour": 17, "room": "RM.8"},
+        {"meeting_type": "LEC", "day": "F", "start_hour": 15, "end_hour": 16, "room": "RM.8"}
+      ]
+    },
+    {
+      "schedule_code": "202610108",
+      "course_code": "DCIT 21A",
+      "section_name": "BSCS-1A",
+      "instructor": "ALVAREZ, MARK",
+      "max_capacity": 35,
+      "enrolled_count": 30,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 10, "end_hour": 12, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 10, "end_hour": 13, "room": "CL1"}
+      ]
+    },
+    {
+      "schedule_code": "202610109",
+      "course_code": "DCIT 21A",
+      "section_name": "BSCS-1B",
+      "instructor": "ALVAREZ, MARK",
+      "max_capacity": 35,
+      "enrolled_count": 26,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 16, "end_hour": 18, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "W", "start_hour": 16, "end_hour": 19, "room": "CL1"}
+      ]
+    },
+    {
+      "schedule_code": "202610110",
+      "course_code": "DCIT 22A",
+      "section_name": "BSCS-1A",
+      "instructor": "NAVARRO, DENNIS",
+      "max_capacity": 35,
+      "enrolled_count": 35,
+      "status": "Closed",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 14, "end_hour": 15, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "F", "start_hour": 8, "end_hour": 12, "room": "CL2"}
+      ]
+    },
+    {
+      "schedule_code": "202610111",
+      "course_code": "DCIT 22A",
+      "section_name": "BSCS-1B",
+      "instructor": "NAVARRO, DENNIS",
+      "max_capacity": 35,
+      "enrolled_count": 24,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 17, "end_hour": 18, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "S", "start_hour": 13, "end_hour": 17, "room": "CL2"}
+      ]
+    },
+    {
+      "schedule_code": "202610112",
+      "course_code": "FITT 1",
+      "section_name": "BSCS-1A",
+      "instructor": "GARCIA, PAULO",
+      "max_capacity": 45,
+      "enrolled_count": 32,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "F", "start_hour": 13, "end_hour": 15, "room": "CC"}
+      ]
+    },
+    {
+      "schedule_code": "202610113",
+      "course_code": "CVSU 101",
+      "section_name": "BSCS-1A",
+      "instructor": "CASTILLO, ANA",
+      "max_capacity": 45,
+      "enrolled_count": 30,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "F", "start_hour": 15, "end_hour": 16, "room": "TBA"}
+      ]
+    },
+    {
+      "schedule_code": "202610114",
+      "course_code": "NSTP 1",
+      "section_name": "BSCS-1A",
+      "instructor": "RAMOS, VICTOR",
+      "max_capacity": 50,
+      "enrolled_count": 41,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "S", "start_hour": 13, "end_hour": 16, "room": "N/A"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610201",
+      "course_code": "GNED 04",
+      "section_name": "BSCS-2A",
+      "instructor": "AQUINO, TERESA",
+      "max_capacity": 40,
+      "enrolled_count": 33,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 8, "end_hour": 10, "room": "A-404"},
+        {"meeting_type": "LEC", "day": "W", "start_hour": 8, "end_hour": 9, "room": "A-404"}
+      ]
+    },
+    {
+      "schedule_code": "202610202",
+      "course_code": "GNED 04",
+      "section_name": "BSCS-2B",
+      "instructor": "AQUINO, TERESA",
+      "max_capacity": 40,
+      "enrolled_count": 27,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 16, "end_hour": 18, "room": "A-404"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 16, "end_hour": 17, "room": "A-404"}
+      ]
+    },
+    {
+      "schedule_code": "202610203",
+      "course_code": "MATH 1A",
+      "section_name": "BSCS-2A",
+      "instructor": "SORIANO, FELIX",
+      "max_capacity": 40,
+      "enrolled_count": 34,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 10, "end_hour": 12, "room": "RM.8"},
+        {"meeting_type": "LEC", "day": "W", "start_hour": 10, "end_hour": 11, "room": "RM.8"}
+      ]
+    },
+    {
+      "schedule_code": "202610204",
+      "course_code": "MATH 1A",
+      "section_name": "BSCS-2B",
+      "instructor": "SORIANO, FELIX",
+      "max_capacity": 40,
+      "enrolled_count": 25,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 15, "end_hour": 17, "room": "RM.8"},
+        {"meeting_type": "LEC", "day": "F", "start_hour": 15, "end_hour": 16, "room": "RM.8"}
+      ]
+    },
+    {
+      "schedule_code": "202610205",
+      "course_code": "COSC 55A",
+      "section_name": "BSCS-2A",
+      "instructor": "SANTOS, EDGARDO",
+      "max_capacity": 40,
+      "enrolled_count": 37,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 8, "end_hour": 10, "room": "RM.7"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 8, "end_hour": 9, "room": "RM.7"}
+      ]
+    },
+    {
+      "schedule_code": "202610206",
+      "course_code": "COSC 55A",
+      "section_name": "BSCS-2B",
+      "instructor": "SANTOS, EDGARDO",
+      "max_capacity": 40,
+      "enrolled_count": 29,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 13, "end_hour": 15, "room": "RM.7"},
+        {"meeting_type": "LEC", "day": "F", "start_hour": 13, "end_hour": 14, "room": "RM.7"}
+      ]
+    },
+    {
+      "schedule_code": "202610207",
+      "course_code": "COSC 60B",
+      "section_name": "BSCS-2A",
+      "instructor": "LEPASANA, JORGE",
+      "max_capacity": 35,
+      "enrolled_count": 32,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 13, "end_hour": 15, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "W", "start_hour": 13, "end_hour": 16, "room": "CL3"}
+      ]
+    },
+    {
+      "schedule_code": "202610208",
+      "course_code": "COSC 60B",
+      "section_name": "BSCS-2B",
+      "instructor": "LEPASANA, JORGE",
+      "max_capacity": 35,
+      "enrolled_count": 22,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 13, "end_hour": 15, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 13, "end_hour": 16, "room": "CL3"}
+      ]
+    },
+    {
+      "schedule_code": "202610209",
+      "course_code": "DCIT 50A",
+      "section_name": "BSCS-2A",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 35,
+      "status": "Closed",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 10, "end_hour": 12, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 10, "end_hour": 13, "room": "CL2"}
+      ]
+    },
+    {
+      "schedule_code": "202610210",
+      "course_code": "DCIT 50A",
+      "section_name": "BSCS-2B",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 26,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 17, "end_hour": 19, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "F", "start_hour": 16, "end_hour": 19, "room": "CL2"}
+      ]
+    },
+    {
+      "schedule_code": "202610211",
+      "course_code": "DCIT 50A",
+      "section_name": "BSCS-2C",
+      "instructor": "NAVARRO, DENNIS",
+      "max_capacity": 35,
+      "enrolled_count": 20,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 17, "end_hour": 19, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "S", "start_hour": 8, "end_hour": 11, "room": "CL1"}
+      ]
+    },
+    {
+      "schedule_code": "202610212",
+      "course_code": "DCIT 24A",
+      "section_name": "BSCS-2A",
+      "instructor": "OLIVO, RAQUEL",
+      "max_capacity": 35,
+      "enrolled_count": 31,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 15, "end_hour": 17, "room": "A-304"},
+        {"meeting_type": "LAB", "day": "F", "start_hour": 8, "end_hour": 11, "room": "CL1"}
+      ]
+    },
+    {
+      "schedule_code": "202610213",
+      "course_code": "DCIT 24A",
+      "section_name": "BSCS-2B",
+      "instructor": "OLIVO, RAQUEL",
+      "max_capacity": 35,
+      "enrolled_count": 24,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 17, "end_hour": 19, "room": "A-304"},
+        {"meeting_type": "LAB", "day": "S", "start_hour": 13, "end_hour": 16, "room": "CL1"}
+      ]
+    },
+    {
+      "schedule_code": "202610214",
+      "course_code": "INSY 50",
+      "section_name": "BSCS-2A",
+      "instructor": "PARALES, REYJONEL",
+      "max_capacity": 40,
+      "enrolled_count": 30,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "F", "start_hour": 13, "end_hour": 15, "room": "A-401"},
+        {"meeting_type": "LEC", "day": "S", "start_hour": 11, "end_hour": 12, "room": "A-401"}
+      ]
+    },
+    {
+      "schedule_code": "202610215",
+      "course_code": "INSY 50",
+      "section_name": "BSCS-2B",
+      "instructor": "PARALES, REYJONEL",
+      "max_capacity": 40,
+      "enrolled_count": 21,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 15, "end_hour": 17, "room": "A-401"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 15, "end_hour": 16, "room": "A-401"}
+      ]
+    },
+    {
+      "schedule_code": "202610216",
+      "course_code": "FITT 3",
+      "section_name": "BSCS-2A",
+      "instructor": "GARCIA, PAULO",
+      "max_capacity": 45,
+      "enrolled_count": 33,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 15, "end_hour": 17, "room": "CC"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610250",
+      "course_code": "DCIT 23A",
+      "section_name": "BSCS-1P",
+      "instructor": "NAVARRO, DENNIS",
+      "max_capacity": 30,
+      "enrolled_count": 18,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 10, "end_hour": 11, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 13, "end_hour": 17, "room": "CL2"}
+      ]
+    },
+    {
+      "schedule_code": "202610251",
+      "course_code": "ITEC 50A",
+      "section_name": "BSCS-1P",
+      "instructor": "ALVAREZ, MARK",
+      "max_capacity": 30,
+      "enrolled_count": 19,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 13, "end_hour": 15, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "W", "start_hour": 13, "end_hour": 16, "room": "CL2"}
+      ]
+    },
+    {
+      "schedule_code": "202610252",
+      "course_code": "MATH 2A",
+      "section_name": "BSCS-2P1",
+      "instructor": "SORIANO, FELIX",
+      "max_capacity": 35,
+      "enrolled_count": 21,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 8, "end_hour": 10, "room": "RM.7"},
+        {"meeting_type": "LEC", "day": "W", "start_hour": 8, "end_hour": 9, "room": "RM.7"}
+      ]
+    },
+    {
+      "schedule_code": "202610253",
+      "course_code": "MATH 2A",
+      "section_name": "BSCS-2P2",
+      "instructor": "ZAPANTA, CHARLES JEREMY",
+      "max_capacity": 35,
+      "enrolled_count": 16,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 14, "end_hour": 16, "room": "RM.8"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 11, "end_hour": 12, "room": "RM.8"}
+      ]
+    },
+    {
+      "schedule_code": "202610254",
+      "course_code": "COSC 70A",
+      "section_name": "BSCS-2P1",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 22,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 14, "end_hour": 16, "room": "RM.8"},
+        {"meeting_type": "LEC", "day": "F", "start_hour": 14, "end_hour": 15, "room": "RM.8"}
+      ]
+    },
+    {
+      "schedule_code": "202610255",
+      "course_code": "COSC 70A",
+      "section_name": "BSCS-2P2",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 14,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 16, "end_hour": 18, "room": "RM.7"},
+        {"meeting_type": "LEC", "day": "T", "start_hour": 16, "end_hour": 17, "room": "RM.7"}
+      ]
+    },
+    {
+      "schedule_code": "202610256",
+      "course_code": "DCIT 25A",
+      "section_name": "BSCS-2P1",
+      "instructor": "BUENAVENTURA, EDUARDO",
+      "max_capacity": 35,
+      "enrolled_count": 20,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 8, "end_hour": 10, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 8, "end_hour": 11, "room": "CL3"}
+      ]
+    },
+    {
+      "schedule_code": "202610257",
+      "course_code": "DCIT 25A",
+      "section_name": "BSCS-2P2",
+      "instructor": "BUENAVENTURA, EDUARDO",
+      "max_capacity": 35,
+      "enrolled_count": 15,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 17, "end_hour": 19, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "S", "start_hour": 13, "end_hour": 16, "room": "CL3"}
+      ]
+    },
+    {
+      "schedule_code": "202610258",
+      "course_code": "DCIT 55A",
+      "section_name": "BSCS-2P1",
+      "instructor": "OLIVO, RAQUEL",
+      "max_capacity": 35,
+      "enrolled_count": 18,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 11, "end_hour": 13, "room": "A-304"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 17, "end_hour": 20, "room": "CL4"}
+      ]
+    },
+    {
+      "schedule_code": "202610259",
+      "course_code": "COSC 65B",
+      "section_name": "BSCS-2P1",
+      "instructor": "LEPASANA, JORGE",
+      "max_capacity": 35,
+      "enrolled_count": 17,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 10, "end_hour": 12, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "S", "start_hour": 8, "end_hour": 11, "room": "CL4"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610601",
+      "course_code": "MATH 3A",
+      "section_name": "BSCS-3A",
+      "instructor": "ZAPANTA, CHARLES JEREMY",
+      "max_capacity": 40,
+      "enrolled_count": 35,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 8, "end_hour": 10, "room": "RM.8"},
+        {"meeting_type": "LEC", "day": "W", "start_hour": 8, "end_hour": 9, "room": "RM.8"}
+      ]
+    },
+    {
+      "schedule_code": "202610621",
+      "course_code": "MATH 3A",
+      "section_name": "BSCS-3B",
+      "instructor": "ZAPANTA, CHARLES JEREMY",
+      "max_capacity": 40,
+      "enrolled_count": 28,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 13, "end_hour": 15, "room": "A-401"},
+        {"meeting_type": "LEC", "day": "F", "start_hour": 13, "end_hour": 14, "room": "A-401"}
+      ]
+    },
+    {
+      "schedule_code": "202610652",
+      "course_code": "MATH 3A",
+      "section_name": "BSCS-3C",
+      "instructor": "ZAPANTA, CHARLES JEREMY",
+      "max_capacity": 40,
+      "enrolled_count": 32,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 18, "end_hour": 20, "room": "TBA"},
+        {"meeting_type": "LEC", "day": "S", "start_hour": 10, "end_hour": 11, "room": "TBA"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610602",
+      "course_code": "COSC 75A",
+      "section_name": "BSCS-3A",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 35,
+      "status": "Closed",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 10, "end_hour": 12, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "W", "start_hour": 10, "end_hour": 13, "room": "CL4"}
+      ]
+    },
+    {
+      "schedule_code": "202610622",
+      "course_code": "COSC 75A",
+      "section_name": "BSCS-3B",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 27,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 13, "end_hour": 15, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 13, "end_hour": 16, "room": "CL4"}
+      ]
+    },
+    {
+      "schedule_code": "202610653",
+      "course_code": "COSC 75A",
+      "section_name": "BSCS-3C",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 30,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 8, "end_hour": 10, "room": "RM.7"},
+        {"meeting_type": "LAB", "day": "T", "start_hour": 10, "end_hour": 13, "room": "CL4"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610603",
+      "course_code": "COSC 80B",
+      "section_name": "BSCS-3A",
+      "instructor": "LEPASANA, JORGE",
+      "max_capacity": 35,
+      "enrolled_count": 31,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 13, "end_hour": 15, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "W", "start_hour": 13, "end_hour": 16, "room": "CL4"}
+      ]
+    },
+    {
+      "schedule_code": "202610623",
+      "course_code": "COSC 80B",
+      "section_name": "BSCS-3B",
+      "instructor": "LEPASANA, JORGE",
+      "max_capacity": 35,
+      "enrolled_count": 25,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 15, "end_hour": 17, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "W", "start_hour": 16, "end_hour": 19, "room": "CL4"}
+      ]
+    },
+    {
+      "schedule_code": "202610654",
+      "course_code": "COSC 80B",
+      "section_name": "BSCS-3C",
+      "instructor": "LEPASANA, JORGE",
+      "max_capacity": 35,
+      "enrolled_count": 29,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 7, "end_hour": 9, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "F", "start_hour": 10, "end_hour": 13, "room": "CL4"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610604",
+      "course_code": "COSC 85A",
+      "section_name": "BSCS-3A",
+      "instructor": "OLIVO, RAQUEL",
+      "max_capacity": 35,
+      "enrolled_count": 33,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 8, "end_hour": 10, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 8, "end_hour": 11, "room": "A-304"}
+      ]
+    },
+    {
+      "schedule_code": "202610624",
+      "course_code": "COSC 85A",
+      "section_name": "BSCS-3B",
+      "instructor": "OLIVO, RAQUEL",
+      "max_capacity": 35,
+      "enrolled_count": 24,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 15, "end_hour": 17, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 16, "end_hour": 19, "room": "A-304"}
+      ]
+    },
+    {
+      "schedule_code": "202610655",
+      "course_code": "COSC 85A",
+      "section_name": "BSCS-3C",
+      "instructor": "OLIVO, RAQUEL",
+      "max_capacity": 35,
+      "enrolled_count": 30,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LAB", "day": "W", "start_hour": 14, "end_hour": 17, "room": "A-304"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 9, "end_hour": 11, "room": "RM.8"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610605",
+      "course_code": "COSC 101",
+      "section_name": "BSCS-3A",
+      "instructor": "BUENAVENTURA, EDUARDO",
+      "max_capacity": 35,
+      "enrolled_count": 32,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 10, "end_hour": 12, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 13, "end_hour": 16, "room": "A-304"}
+      ]
+    },
+    {
+      "schedule_code": "202610625",
+      "course_code": "COSC 101",
+      "section_name": "BSCS-3B",
+      "instructor": "BUENAVENTURA, EDUARDO",
+      "max_capacity": 35,
+      "enrolled_count": 26,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 13, "end_hour": 15, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "F", "start_hour": 14, "end_hour": 17, "room": "A-304"}
+      ]
+    },
+    {
+      "schedule_code": "202610656",
+      "course_code": "COSC 101",
+      "section_name": "BSCS-3C",
+      "instructor": "BUENAVENTURA, EDUARDO",
+      "max_capacity": 35,
+      "enrolled_count": 28,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 11, "end_hour": 13, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "F", "start_hour": 14, "end_hour": 17, "room": "A-304"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610606",
+      "course_code": "DCIT 26A",
+      "section_name": "BSCS-3A",
+      "instructor": "BUENAVENTURA, EDUARDO",
+      "max_capacity": 35,
+      "enrolled_count": 34,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 15, "end_hour": 17, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "F", "start_hour": 8, "end_hour": 11, "room": "A-304"}
+      ]
+    },
+    {
+      "schedule_code": "202610626",
+      "course_code": "DCIT 26A",
+      "section_name": "BSCS-3B",
+      "instructor": "ALVAREZ, MARK",
+      "max_capacity": 35,
+      "enrolled_count": 23,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 17, "end_hour": 19, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "S", "start_hour": 13, "end_hour": 16, "room": "CL4"}
+      ]
+    },
+    {
+      "schedule_code": "202610657",
+      "course_code": "DCIT 26A",
+      "section_name": "BSCS-3C",
+      "instructor": "BUENAVENTURA, EDUARDO",
+      "max_capacity": 35,
+      "enrolled_count": 29,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 9, "end_hour": 11, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 14, "end_hour": 17, "room": "A-304"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610607",
+      "course_code": "DCIT 65A",
+      "section_name": "BSCS-3A",
+      "instructor": "PARALES, REYJONEL",
+      "max_capacity": 40,
+      "enrolled_count": 36,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 13, "end_hour": 15, "room": "A-404"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 11, "end_hour": 12, "room": "A-404"}
+      ]
+    },
+    {
+      "schedule_code": "202610627",
+      "course_code": "DCIT 65A",
+      "section_name": "BSCS-3B",
+      "instructor": "PARALES, REYJONEL",
+      "max_capacity": 40,
+      "enrolled_count": 22,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "F", "start_hour": 17, "end_hour": 19, "room": "A-405"},
+        {"meeting_type": "LEC", "day": "S", "start_hour": 16, "end_hour": 17, "room": "A-405"}
+      ]
+    },
+    {
+      "schedule_code": "202610658",
+      "course_code": "DCIT 65A",
+      "section_name": "BSCS-3C",
+      "instructor": "PARALES, REYJONEL",
+      "max_capacity": 40,
+      "enrolled_count": 31,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "F", "start_hour": 8, "end_hour": 10, "room": "TBA"},
+        {"meeting_type": "LEC", "day": "S", "start_hour": 8, "end_hour": 9, "room": "TBA"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610701",
+      "course_code": "GNED 09",
+      "section_name": "BSCS-3P",
+      "instructor": "AQUINO, TERESA",
+      "max_capacity": 40,
+      "enrolled_count": 21,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "S", "start_hour": 10, "end_hour": 13, "room": "A-401"}
+      ]
+    },
+    {
+      "schedule_code": "202610702",
+      "course_code": "GNED 10A",
+      "section_name": "BSCS-3P",
+      "instructor": "MENDOZA, LIZA",
+      "max_capacity": 40,
+      "enrolled_count": 24,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 17, "end_hour": 19, "room": "A-405"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 19, "end_hour": 20, "room": "A-405"}
+      ]
+    },
+    {
+      "schedule_code": "202610703",
+      "course_code": "COSC 90",
+      "section_name": "BSCS-3P",
+      "instructor": "SANTOS, EDGARDO",
+      "max_capacity": 35,
+      "enrolled_count": 19,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 10, "end_hour": 12, "room": "RM.8"},
+        {"meeting_type": "LEC", "day": "F", "start_hour": 10, "end_hour": 11, "room": "RM.8"}
+      ]
+    },
+    {
+      "schedule_code": "202610704",
+      "course_code": "COSC 95",
+      "section_name": "BSCS-3P",
+      "instructor": "NAVARRO, DENNIS",
+      "max_capacity": 35,
+      "enrolled_count": 18,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 15, "end_hour": 17, "room": "RM.106"},
+        {"meeting_type": "LEC", "day": "F", "start_hour": 16, "end_hour": 17, "room": "RM.106"}
+      ]
+    },
+    {
+      "schedule_code": "202610705",
+      "course_code": "ITEC 85C",
+      "section_name": "BSCS-3P",
+      "instructor": "OLIVO, RAQUEL",
+      "max_capacity": 35,
+      "enrolled_count": 20,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "F", "start_hour": 11, "end_hour": 13, "room": "A-401"}
+      ]
+    },
+
+    {
+      "schedule_code": "202610801",
+      "course_code": "ITEC 80D",
+      "section_name": "BSCS-4A",
+      "instructor": "ALVAREZ, MARK",
+      "max_capacity": 40,
+      "enrolled_count": 28,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 9, "end_hour": 10, "room": "RM.106"}
+      ]
+    },
+    {
+      "schedule_code": "202610802",
+      "course_code": "COSC 100B",
+      "section_name": "BSCS-4A",
+      "instructor": "SANTOS, EDGARDO",
+      "max_capacity": 40,
+      "enrolled_count": 30,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 10, "end_hour": 12, "room": "RM.7"},
+        {"meeting_type": "LEC", "day": "W", "start_hour": 10, "end_hour": 11, "room": "RM.7"}
+      ]
+    },
+    {
+      "schedule_code": "202610803",
+      "course_code": "COSC 100B",
+      "section_name": "BSCS-4B",
+      "instructor": "SANTOS, EDGARDO",
+      "max_capacity": 40,
+      "enrolled_count": 21,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 14, "end_hour": 16, "room": "RM.7"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 14, "end_hour": 15, "room": "RM.7"}
+      ]
+    },
+    {
+      "schedule_code": "202610804",
+      "course_code": "COSC 105",
+      "section_name": "BSCS-4A",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 29,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 10, "end_hour": 12, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "TH", "start_hour": 10, "end_hour": 13, "room": "CL4"}
+      ]
+    },
+    {
+      "schedule_code": "202610805",
+      "course_code": "COSC 105",
+      "section_name": "BSCS-4B",
+      "instructor": "TEPORA, RICKY",
+      "max_capacity": 35,
+      "enrolled_count": 22,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "W", "start_hour": 17, "end_hour": 19, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "S", "start_hour": 8, "end_hour": 11, "room": "CL3"}
+      ]
+    },
+    {
+      "schedule_code": "202610806",
+      "course_code": "COSC 111B",
+      "section_name": "BSCS-4A",
+      "instructor": "LEPASANA, JORGE",
+      "max_capacity": 35,
+      "enrolled_count": 27,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "M", "start_hour": 14, "end_hour": 16, "room": "RM.106"},
+        {"meeting_type": "LAB", "day": "W", "start_hour": 14, "end_hour": 17, "room": "CL3"}
+      ]
+    },
+    {
+      "schedule_code": "202610807",
+      "course_code": "COSC 111B",
+      "section_name": "BSCS-4B",
+      "instructor": "LEPASANA, JORGE",
+      "max_capacity": 35,
+      "enrolled_count": 19,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 17, "end_hour": 19, "room": "RM.8"},
+        {"meeting_type": "LAB", "day": "F", "start_hour": 17, "end_hour": 20, "room": "CL3"}
+      ]
+    },
+    {
+      "schedule_code": "202610808",
+      "course_code": "COSC 200-A",
+      "section_name": "BSCS-4A",
+      "instructor": "BAUTISTA, RAMON",
+      "max_capacity": 40,
+      "enrolled_count": 24,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "S", "start_hour": 13, "end_hour": 16, "room": "RM.7"}
+      ]
+    },
+    {
+      "schedule_code": "202610809",
+      "course_code": "GNED 07",
+      "section_name": "BSCS-4A",
+      "instructor": "CRUZ, LORENA",
+      "max_capacity": 40,
+      "enrolled_count": 25,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "F", "start_hour": 15, "end_hour": 17, "room": "A-404"},
+        {"meeting_type": "LEC", "day": "S", "start_hour": 11, "end_hour": 12, "room": "A-404"}
+      ]
+    },
+    {
+      "schedule_code": "202610810",
+      "course_code": "COSC 110",
+      "section_name": "BSCS-4A",
+      "instructor": "ZAPANTA, CHARLES JEREMY",
+      "max_capacity": 35,
+      "enrolled_count": 20,
+      "status": "Open",
+      "meetings": [
+        {"meeting_type": "LEC", "day": "T", "start_hour": 13, "end_hour": 15, "room": "RM.8"},
+        {"meeting_type": "LEC", "day": "TH", "start_hour": 13, "end_hour": 14, "room": "RM.8"}
+      ]
+    }
+  ]
+}

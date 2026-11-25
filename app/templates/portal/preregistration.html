@@ -1,0 +1,40 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block extra_css %}
+{% if is_irregular %}
+<link rel="stylesheet" href="/static/css/scheduler.css?v=5">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if is_irregular %}
+  {% include "scheduler/_scheduler_workspace.html" %}
+{% else %}
+  <!-- Exact 1:1 CvSU-Imus Student Portal view for Regular Block Students -->
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header justify-content-between align-items-center">
+          <p class="mb-0">Pre-Registration Form</p>
+        </div>
+        <div class="card-body pt-4">
+          <p class="mb-0">Pre-Registration is currently unavailable</p>
+        </div>
+        <div class="card-footer">
+          <p class="text-muted fs-13 mb-0">
+            Regular block students do not use manual pre-registration. To preview the integrated AI-Driven Enrollment Scheduler,
+            <a href="/demo-login/202410101" class="fw-semibold">switch to an Irregular BSCS demo account</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+{% if is_irregular %}
+<script src="/static/js/toggle-matrix.js?v=5"></script>
+<script src="/static/js/scheduler-app.js?v=5"></script>
+{% endif %}
+{% endblock %}

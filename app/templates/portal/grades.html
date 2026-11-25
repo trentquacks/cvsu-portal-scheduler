@@ -1,0 +1,94 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card">
+      <div class="card-header justify-content-between align-items-center">
+        <p class="mb-0">Subjects with Grade</p>
+      </div>
+      <div class="card-body pt-4">
+        <div class="alert alert-light mb-3" role="alert">
+          <i class="fa fa-exclamation-circle me-2" aria-hidden="true"></i>
+          INC or 4.00 grade can only be completed within one (1) academic year; otherwise, grade will be marked 5.00
+        </div>
+
+        <p class="text-center mb-4">
+          Total Lecture Units: <span class="fw-bold">{{ overall_lec }}</span>&emsp;
+          Total Laboratory Units: <span class="fw-bold">{{ overall_lab }}</span>&emsp;
+          Total Units: <span class="fw-bold">{{ overall_units }}</span>
+        </p>
+
+        {% if semester_groups %}
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover mb-3">
+            <tbody>
+              {% for grp in semester_groups %}
+              <tr>
+                <td colspan="9">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-center fw-semibold" style="margin: 0 auto;">
+                      {{ grp.semester }} SEMESTER {{ grp.academic_year }}
+                    </div>
+                    <span>
+                      <a href="/subjects/regform" class="btn btn-light btn-sm">
+                        <i class="fa fa-download me-2"></i>Reg Form
+                      </a>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="text-center">
+                <td class="border-bottom-0 fw-semibold text-nowrap">Subject Code</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Subject Title</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Section</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Schedule Code</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Lec Unit</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Lab Unit</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Total</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Grade</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Completion</td>
+              </tr>
+              {% for rec in grp.rows %}
+              <tr class="border-bottom user-list">
+                <td class="text-center text-nowrap">{{ rec.course.code }}</td>
+                <td>{{ rec.course.title }}</td>
+                <td class="text-center text-nowrap">{{ rec.section_name }}</td>
+                <td class="text-center text-nowrap">{{ rec.schedule_code }}</td>
+                <td class="text-center text-nowrap">{{ rec.course.lec_units }}</td>
+                <td class="text-center text-nowrap">{{ rec.course.lab_units }}</td>
+                <td class="text-center text-nowrap">{{ rec.course.total_units }}</td>
+                <td class="text-center text-nowrap">
+                  {% if rec.status == 'FAILED' %}
+                    <span class="badge bg-danger">{{ rec.grade }}</span>
+                  {% elif rec.status == 'CREDITED' %}
+                    <span class="badge bg-info">{{ rec.grade }}</span>
+                  {% else %}
+                    <span class="badge bg-success">{{ rec.grade }}</span>
+                  {% endif %}
+                </td>
+                <td class="text-center text-nowrap">{{ rec.completion }}</td>
+              </tr>
+              {% endfor %}
+              <tr class="border-bottom table-light">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-center fw-bold">{{ grp.lec_sum }}</td>
+                <td class="text-center fw-bold">{{ grp.lab_sum }}</td>
+                <td class="text-center fw-bold">{{ grp.total_sum }}</td>
+                <td class="text-center fw-bold" colspan="2">Average: {{ grp.gwa }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <p class="text-muted mb-0">No graded historical records found.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

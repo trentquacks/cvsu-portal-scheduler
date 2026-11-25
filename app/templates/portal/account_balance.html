@@ -1,0 +1,45 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card">
+      <div class="card-header justify-content-between align-items-center">
+        <p class="mb-0">Account Balance</p>
+      </div>
+      <div class="card-body pt-4">
+        <div class="table-responsive">
+          <table class="table table-bordered text-nowrap mb-3">
+            <thead class="border-top">
+              <tr class="text-center">
+                <th class="border-bottom-0 fw-semibold">Academic Year</th>
+                <th class="border-bottom-0 fw-semibold">Semester</th>
+                <th class="border-bottom-0 fw-semibold">Total Fee</th>
+                <th class="border-bottom-0 fw-semibold">Total Paid</th>
+                <th class="border-bottom-0 fw-semibold">Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in balances %}
+              <tr class="border-bottom user-list">
+                <td class="text-center">{{ row.academic_year }}</td>
+                <td class="text-center">{{ row.semester }}</td>
+                <td class="text-center">{{ "{:,.2f}".format(row.total_fee) }}</td>
+                <td class="text-center">{{ "{:,.2f}".format(row.total_paid) }}</td>
+                <td class="text-center fw-semibold {{ 'text-danger' if row.balance > 0 else 'text-success' }}">
+                  {{ "{:,.2f}".format(row.balance) }}
+                </td>
+              </tr>
+              {% else %}
+              <tr>
+                <td colspan="5" class="text-center text-muted py-4">No financial records available.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

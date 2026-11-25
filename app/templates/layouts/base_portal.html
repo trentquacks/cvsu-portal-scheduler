@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-mode="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} | Student Portal - CvSU Imus</title>
+  <script>
+    (function () {
+      var m = localStorage.getItem("cvsu_portal_theme_mode") || "light";
+      document.documentElement.setAttribute("data-theme-mode", m);
+      document.documentElement.setAttribute("data-bs-theme", m);
+    })();
+  </script>
+  <link rel="icon" href="/static/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/static/vendor/poppins/poppins.css">
+  <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/vendor/feather/css/feather.css?v=5">
+  <link rel="stylesheet" href="/static/css/portal-theme.css?v=5">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <div class="portal-page">
+    {% include "partials/_sidebar.html" %}
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    {% include "partials/_header.html" %}
+
+    <div class="app-content">
+      <div class="page-header">
+        <h1 class="page-title">{{ page_title }}</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="{{ '/adviser' if user.role == 'adviser' else '/dashboard' }}">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">{{ page_title }}</li>
+          </ol>
+        </nav>
+      </div>
+
+      <main class="main-container">
+        {% include "partials/_flash.html" %}
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+
+    {% include "partials/_footer.html" %}
+  </div>
+
+  {% include "partials/_eval_modals.html" %}
+
+  <button type="button" class="scrollToTop" id="scrollToTopBtn" title="Back to top">
+    <i class="fa fa-angle-up"></i>
+  </button>
+
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/portal.js?v=6"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

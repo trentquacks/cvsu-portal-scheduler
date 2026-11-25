@@ -1,0 +1,90 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Data Privacy Notice and Consent Form</h3>
+      </div>
+      <div class="card-body pt-4">
+        <p class="mb-3 text-justify">
+          <b>Cavite State University (CvSU)</b> is required by law to process your personal information and sensitive
+          personal information in order to safeguard academic freedom, uphold your right to quality education, and
+          protect your right to data privacy in conformity with <b>Republic Act No. 10173</b>, otherwise known as the
+          <b>Data Privacy Act of 2012</b>, and its implementing rules and regulations. The said law can be viewed
+          <a class="text-primary" href="https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/" target="_blank" rel="noopener">through this link</a>.
+        </p>
+
+        <p class="fw-bold mb-3">Personal Information Collected and Stored</p>
+        <p class="mb-2 text-justify">
+          The University collects, uses and keeps your personal information, which include but are not limited, to the following:
+        </p>
+        <ul class="list-style-1 ms-4">
+          <li>Name, age, date of birth;</li>
+          <li>Address and contact details</li>
+          <li>Educational records</li>
+          <li>Learner reference number (if any)</li>
+          <li>Photograph or image</li>
+          <li>Signature</li>
+          <li>Family data (names of parents, their citizenship, civil status, etc.);</li>
+          <li>Medical history and records</li>
+          <li>Choice of campus and degree programs</li>
+          <li>Socio-economic and geographic information about your household</li>
+        </ul>
+
+        <p class="mt-3 text-justify">
+          The following information is collected directly from you, your parents, legal guardians and/or other authorized
+          representatives during your application for admission and in the course of your residency in the University. We
+          use this information to verify your identity, determine your eligibility to enroll in CvSU, to document consent
+          for the processing of personal data in the course of determining your eligibility to enroll in CvSU as well as
+          for other education related purposes such as but not limited to:
+        </p>
+        <ul class="list-style-1 ms-4">
+          <li>availment of scholarship grants and financial assistance whenever applicable</li>
+          <li>provision of psychological and emotional assessment as needed</li>
+          <li>availment of various student services within the university (i.e. guidance services, infirmary services, etc.)</li>
+        </ul>
+
+        <p class="fw-bold mt-3">Sensitive Personal Information Collected and Stored</p>
+        <p class="mt-2 text-justify">
+          The University also processes sensitive personal information under the DPA. These include, but are not limited
+          to: race, ethnicity, civil status, health information, government-issued ID and relevant financial information.
+        </p>
+        <p class="mt-2 text-justify">
+          Access to the data is restricted and given only to predetermined authorized personnel in relation to their
+          specific function which requires them to access or process student or employee information.
+        </p>
+
+        <p class="fw-bold mt-3">Disclosure</p>
+        <p class="mt-2 text-justify">
+          To comply with its legal and regulatory duties, the University submits required information to relevant
+          government agencies such as the Commission on Higher Education (CHED). As a rule, CvSU will only disclose your
+          personal data to third parties with your consent. The University will disclose or share such information only
+          when required or allowed by applicable laws.
+        </p>
+
+        <p class="fw-bold mt-3">Security</p>
+        <p class="mt-2 text-justify">
+          Your personal data is stored in physical repositories and secured databases managed by the University's
+          Registrar, ICT Office and/or their counterparts in the CvSU Campuses. The University has appropriate physical,
+          technical and organizational security measures which ensure the confidentiality of your information. These
+          measures will be reviewed over time and upgraded in line with technological developments and regulatory
+          requirements.
+        </p>
+        <p class="mt-2 mb-0 text-justify">
+          The University's General Data Privacy Notice can be viewed in the official Cavite State University website
+          which may be updated from time to time, the updates effective from the date of posting. If you have questions
+          about the DPA, you may email the University's Data Protection Officer at <b>dpo@cvsu.edu.ph</b>. You may
+          personally check and update your data by contacting the University Registrar.
+        </p>
+      </div>
+      <div class="card-footer">
+        <p class="fst-italic text-justify mb-0">
+          You agreed to these terms and conditions on {{ user.created_at.strftime('%B %d, %Y') }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

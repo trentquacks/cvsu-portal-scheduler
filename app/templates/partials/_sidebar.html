@@ -1,0 +1,107 @@
+<aside class="app-sidebar" id="sidebar">
+  <div class="main-sidebar-header">
+    <a href="{{ '/adviser' if user.role == 'adviser' else '/dashboard' }}" class="d-flex align-items-center">
+      <img src="/static/assets/images/logo-white.png" alt="Cavite State University - Imus Campus">
+    </a>
+  </div>
+
+  <div class="main-sidebar">
+    <nav class="main-menu-container">
+      <ul class="main-menu">
+        {% if user.role == 'adviser' %}
+        <li class="slide">
+          <a href="/adviser" class="side-menu__item {{ 'active' if active_nav == 'adviser' }}">
+            <i class="fe fe-shield side-menu__icon"></i>
+            <span class="side-menu__label">Adviser Review</span>
+            {% if pending_advising_count > 0 %}
+            <span class="badge bg-white text-primary rounded-pill">{{ pending_advising_count }}</span>
+            {% endif %}
+          </a>
+        </li>
+        {% endif %}
+
+        <li class="slide">
+          <a href="/dashboard" class="side-menu__item {{ 'active' if active_nav == 'dashboard' }}">
+            <i class="fe fe-home side-menu__icon"></i>
+            <span class="side-menu__label">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="slide">
+          <a href="/profile" class="side-menu__item {{ 'active' if active_nav == 'profile' }}">
+            <i class="fe fe-user side-menu__icon"></i>
+            <span class="side-menu__label">My Profile</span>
+          </a>
+        </li>
+
+        {% if user.role == 'student' %}
+        <li class="slide">
+          <a href="/preregistration" class="side-menu__item {{ 'active' if active_nav == 'preregistration' }}">
+            <i class="fe fe-edit side-menu__icon"></i>
+            <span class="side-menu__label">Pre-Registration</span>
+          </a>
+        </li>
+
+        <li class="slide has-sub {{ 'is-expanded' if active_nav == 'enrollment' }}">
+          <a href="javascript:void(0);" class="side-menu__item {{ 'active' if active_nav == 'enrollment' }}">
+            <i class="fe fe-book-open side-menu__icon"></i>
+            <span class="side-menu__label">Enrollment Record</span>
+            <i class="fe fe-chevron-right side-menu__angle"></i>
+          </a>
+          <ul class="slide-menu">
+            <li class="slide">
+              <a href="/subjects" class="side-menu__item {{ 'active' if active_sub == 'subjects' }}">Current Subjects</a>
+            </li>
+            <li class="slide">
+              <a href="/grades" class="side-menu__item {{ 'active' if active_sub == 'grades' }}">Grades</a>
+            </li>
+            <li class="slide">
+              <a href="/checklist" class="side-menu__item {{ 'active' if active_sub == 'checklist' }}">Curriculum Checklist</a>
+            </li>
+            <li class="slide">
+              <a href="/accountbalance" class="side-menu__item {{ 'active' if active_sub == 'accountbalance' }}">Account Balance</a>
+            </li>
+          </ul>
+        </li>
+        {% endif %}
+
+        <li class="slide">
+          <a href="/schedules" class="side-menu__item {{ 'active' if active_nav == 'schedules' }}">
+            <i class="fe fe-calendar side-menu__icon"></i>
+            <span class="side-menu__label">Subjects Offered</span>
+          </a>
+        </li>
+
+        <li class="slide">
+          <a href="/announcement" class="side-menu__item {{ 'active' if active_nav == 'announcement' }}">
+            <i class="fe fe-bell side-menu__icon"></i>
+            <span class="side-menu__label">Class Announcements</span>
+          </a>
+        </li>
+
+        <li><hr class="sidebar-divider"></li>
+
+        <li class="slide">
+          <a href="/dataprivacy" class="side-menu__item {{ 'active' if active_nav == 'dataprivacy' }}">
+            <i class="fe fe-file-text side-menu__icon"></i>
+            <span class="side-menu__label">Data Privacy</span>
+          </a>
+        </li>
+
+        <li class="slide">
+          <a href="/account" class="side-menu__item {{ 'active' if active_nav == 'account' }}">
+            <i class="fe fe-settings side-menu__icon"></i>
+            <span class="side-menu__label">Account Settings</span>
+          </a>
+        </li>
+
+        <li class="slide">
+          <a href="/signout" class="side-menu__item">
+            <i class="fe fe-log-out side-menu__icon"></i>
+            <span class="side-menu__label">Sign Out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

@@ -1,0 +1,221 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+  <div>
+    <h5 class="fw-semibold mb-0">{{ student.formal_name }} ({{ student.student_number }})</h5>
+    <div class="small text-muted">{{ student.course_code }} Year {{ student.year_level }} | {{ student.scenario_label }}</div>
+  </div>
+  <a href="/adviser" class="btn btn-sm btn-outline-primary">
+    <i class="fa fa-arrow-left me-1"></i>Back to Adviser Queue
+  </a>
+</div>
+
+<div class="row">
+  <!-- Left Column: Academic Standing & Manual Constraint Overrides -->
+  <div class="col-lg-5">
+    <!-- Academic Standing Summary -->
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Academic Standing &amp; Prerequisite Report</h5>
+        <span class="badge bg-primary">{{ completed_count }} / {{ eligibility|length }} Completed</span>
+      </div>
+      <div class="card-body small">
+        <div class="mb-3">
+          <div class="fw-semibold text-danger mb-1">Failed Subjects (Require Retake)</div>
+          {% if failed_courses %}
+            <ul class="mb-0 ps-3">
+              {% for c in failed_courses %}
+              <li><strong>{{ c.code }}</strong> - {{ c.title }} (Grade: {{ c.grade }})</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <div class="text-muted">None.</div>
+          {% endif %}
+        </div>
+
+        <div class="mb-3">
+          <div class="fw-semibold text-warning mb-1">Prerequisite-Locked Subjects ({{ locked_courses|length }})</div>
+          {% if locked_courses %}
+            <div style="max-height: 180px; overflow-y: auto;" class="border rounded p-2">
+              {% for c in locked_courses %}
+              <div class="mb-1 pb-1 border-bottom">
+                <strong>{{ c.code }}</strong> ({{ c.title }})<br>
+                <span class="text-danger">Missing: {{ c.missing_prerequisites|join(', ') }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="text-muted">No prerequisite-locked subjects.</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Manual Constraint Override Panel -->
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title"><i class="fe fe-shield text-primary me-2"></i>Manual Constraint Overrides</h5>
+      </div>
+      <div class="card-body">
+        <form method="post" action="/adviser/student/{{ student.id }}/override" class="mb-3">
+          <div class="mb-2">
+            <label for="course_id" class="form-label small fw-medium">Unlock Locked Course</label>
+            <select id="course_id" name="course_id" class="form-select form-select-sm" required>
+              <option value="">-- Select Prerequisite-Locked BSCS Subject --</option>
+              {% for c in locked_courses %}
+              <option value="{{ c.course_id }}">
+                {{ c.code }} - {{ c.title }} (Missing: {{ c.missing_prerequisites|join(', ') }})
+              </option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="mb-2">
+            <label for="reason" class="form-label small fw-medium">Adviser Justification / Waiver Reason</label>
+            <textarea
+              id="reason"
+              name="reason"
+              rows="2"
+              class="form-control form-control-sm"
+              placeholder="e.g., Concurrent enrollment approved by DCS Chairperson for graduating/irregular track."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-sm btn-primary" {{ 'disabled' if not locked_courses }}>
+            <i class="fa fa-unlock me-1"></i>Grant Manual Override
+          </button>
+        </form>
+
+        <h6 class="small fw-semibold text-muted text-uppercase border-top pt-3 mb-2">Active Overrides ({{ overrides|length }})</h6>
+        {% if overrides %}
+          {% for ov in overrides %}
+          <div class="d-flex justify-content-between align-items-start gap-2 border rounded p-2 mb-2 small">
+            <div>
+              <div class="fw-semibold text-primary">{{ ov.course.code }} - {{ ov.course.title }}</div>
+              <div class="text-muted">{{ ov.reason }}</div>
+            </div>
+            <form method="post" action="/adviser/override/{{ ov.id }}/delete">
+              <button type="submit" class="btn btn-sm btn-outline-danger py-0 px-2" title="Revoke override">Revoke</button>
+            </form>
+          </div>
+          {% endfor %}
+        {% else %}
+          <p class="small text-muted mb-0">No manual overrides granted for this student.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column: Submitted Master Schedule, Diagnostics & Sign-Off Form -->
+  <div class="col-lg-7">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Submitted Master Schedule Review</h5>
+        {% if latest_sub %}
+        <span class="badge {% if latest_sub.status == 'APPROVED' %}bg-success{% elif latest_sub.status == 'PENDING_ADVISING' %}bg-warning{% else %}bg-danger{% endif %}">
+          {{ latest_sub.status.replace('_', ' ') }}
+        </span>
+        {% endif %}
+      </div>
+      <div class="card-body">
+        {% if latest_sub %}
+          <div class="row g-2 mb-3 small">
+            <div class="col-sm-4">
+              <div class="border rounded p-2">
+                <div class="text-muted">Total Units</div>
+                <div class="fw-semibold fs-6">{{ latest_sub.total_units }} Units ({{ sub_offerings|length }} Subjects)</div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="border rounded p-2">
+                <div class="text-muted">Idle Gap Hours</div>
+                <div class="fw-semibold fs-6">{{ latest_sub.idle_gap_hours }} hr(s)</div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="border rounded p-2">
+                <div class="text-muted">CP-SAT Verification</div>
+                <div class="fw-semibold fs-6 text-primary">{{ "%.2f"|format(latest_sub.solver_time_ms) }} ms (0 Clashes)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive mb-3">
+            <table class="table table-bordered table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Sched Code</th>
+                  <th>Subject</th>
+                  <th>Section</th>
+                  <th class="text-center">Units</th>
+                  <th>Schedule / Room</th>
+                  <th>Instructor</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for off in sub_offerings %}
+                <tr>
+                  <td class="text-nowrap">{{ off.schedule_code }}</td>
+                  <td>
+                    <div class="fw-semibold">{{ off.course.code }}</div>
+                    <div class="small text-muted">{{ off.course.title }}</div>
+                  </td>
+                  <td class="text-nowrap">{{ off.section_name }}</td>
+                  <td class="text-center">{{ off.course.total_units }}</td>
+                  <td class="small">
+                    {% for m in off.meetings %}
+                    <div><span class="badge {{ 'bg-info' if m.meeting_type == 'LAB' else 'bg-primary' }} me-1">{{ m.meeting_type }}</span>{{ m.portal_format }}</div>
+                    {% endfor %}
+                  </td>
+                  <td class="small">{{ off.instructor }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          {% if sub_swaps %}
+          <div class="alert alert-light border small mb-3">
+            <div class="fw-semibold text-primary mb-1">Dynamic Section-Swapping Log Applied</div>
+            <ul class="mb-0 ps-3">
+              {% for sw in sub_swaps %}
+              <li>
+                <strong>{{ sw.course_code }}</strong>: {{ sw.from_section }} &rarr; {{ sw.to_section }} ({{ sw.reason }})
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+
+          <!-- Adviser Sign-Off Decision Form -->
+          <form method="post" action="/adviser/submission/{{ latest_sub.id }}/decision" class="border-top pt-3">
+            <div class="mb-3">
+              <label for="adviser_notes" class="form-label small fw-medium">Adviser Evaluation Remarks</label>
+              <textarea
+                id="adviser_notes"
+                name="adviser_notes"
+                rows="3"
+                class="form-control form-control-sm"
+                placeholder="Enter advising notes, approval confirmation, or revision instructions..."
+              >{{ latest_sub.adviser_notes }}</textarea>
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="submit" name="decision" value="APPROVED" class="btn btn-sm btn-primary">
+                <i class="fa fa-check me-1"></i>Approve &amp; Sign-Off (Enroll Subjects)
+              </button>
+              <button type="submit" name="decision" value="REVISION_REQUESTED" class="btn btn-sm btn-outline-danger">
+                <i class="fa fa-undo me-1"></i>Request Revision
+              </button>
+            </div>
+          </form>
+        {% else %}
+          <div class="text-center py-5 text-muted small">
+            <i class="fe fe-file-text d-block mx-auto mb-2" style="font-size: 1.75rem;"></i>
+            This student has not submitted a generated master schedule for advising review yet.
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

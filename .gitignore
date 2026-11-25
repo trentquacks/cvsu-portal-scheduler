@@ -1,0 +1,46 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode & caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local SQLite database files (auto-created and seeded on startup)
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+*.sqlite
+*.sqlite3
+
+# Environment variables & local secrets
+.env
+.env.*
+!.env.example
+
+# Build & packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# IDE & editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS metadata & logs
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

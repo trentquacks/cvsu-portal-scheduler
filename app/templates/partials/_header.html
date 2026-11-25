@@ -1,0 +1,107 @@
+<header class="app-header">
+  <div class="header-left">
+    <button type="button" class="header-icon-btn" id="sidebarToggleBtn" aria-label="Toggle Navigation">
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="header-date">
+      <i class="fa fa-calendar text-primary"></i>
+      <span>{{ current_date }}</span>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <!-- Light / Dark Theme Switch -->
+    <button type="button" class="header-icon-btn" id="themeModeToggle" title="Toggle Dark/Light Theme">
+      <i class="fa fa-moon-o" id="themeIconDark"></i>
+      <i class="fa fa-sun-o d-none" id="themeIconLight"></i>
+    </button>
+
+    <!-- Fullscreen Toggle -->
+    <button type="button" class="header-icon-btn d-none d-sm-inline-flex" id="fullscreenToggleBtn" title="Fullscreen">
+      <i class="fa fa-expand"></i>
+    </button>
+
+    <!-- Quick Portal / Demo Persona Switcher & Presenter Tools Dropdown -->
+    <div class="dropdown">
+      <button type="button" class="header-icon-btn" data-bs-toggle="dropdown" aria-expanded="false" title="Quick Switch Demo Account & Tools">
+        <i class="fe fe-grid"></i>
+      </button>
+      <div class="dropdown-menu dropdown-menu-end shadow-sm p-2 demo-persona-menu" style="width: 310px; max-width: calc(100vw - 2rem);">
+        <div class="px-2 py-1 fs-12 fw-semibold text-muted border-bottom mb-1">
+          Quick Demo Persona Switch (BSCS)
+        </div>
+        <a class="dropdown-item rounded py-2 small" href="/demo-login/202410101">
+          <div class="fw-semibold">Miguel Dela Cruz <span class="badge bg-warning ms-1">Irregular</span></div>
+          <div class="text-muted fs-11">202410101 - Failed Prerequisites</div>
+        </a>
+        <a class="dropdown-item rounded py-2 small" href="/demo-login/202310205">
+          <div class="fw-semibold">Clarisse Santos <span class="badge bg-warning ms-1">Irregular</span></div>
+          <div class="text-muted fs-11">202310205 - Working Student (Mornings Blocked)</div>
+        </a>
+        <a class="dropdown-item rounded py-2 small" href="/demo-login/202410308">
+          <div class="fw-semibold">Paolo Reyes <span class="badge bg-warning ms-1">Irregular</span></div>
+          <div class="text-muted fs-11">202410308 - Transferee / Shiftee</div>
+        </a>
+        <a class="dropdown-item rounded py-2 small" href="/demo-login/202410001">
+          <div class="fw-semibold">Andrea Villanueva <span class="badge bg-success ms-1">Regular</span></div>
+          <div class="text-muted fs-11">202410001 - Block BSCS-3C Reference</div>
+        </a>
+        <div class="dropdown-divider my-1"></div>
+        <a class="dropdown-item rounded py-2 small" href="/demo-login/ADV202601">
+          <div class="fw-semibold">Prof. Ramon Bautista <span class="badge bg-primary ms-1">Adviser</span></div>
+          <div class="text-muted fs-11">ADV202601 - Registration Adviser Review</div>
+        </a>
+
+        <div class="dropdown-divider my-1"></div>
+        <div class="px-2 py-1 fs-11 fw-semibold text-muted">
+          Presenter / Evaluation Tools
+        </div>
+        {% if user.role == 'student' and user.student_type == 'Irregular' %}
+        <a class="dropdown-item rounded py-2 small" href="/preregistration?demo_conflict=1" id="headerLoadConflictDemo">
+          <i class="fa fa-exchange text-danger me-2"></i>Run Conflict &amp; Swap Demo
+        </a>
+        <a class="dropdown-item rounded py-2 small" href="/preregistration?demo_transcript=1" id="headerOpenTranscriptSim">
+          <i class="fa fa-sliders text-primary me-2"></i>Simulate Transcript Standing (DAG)
+        </a>
+        {% endif %}
+        <a
+          class="dropdown-item rounded py-2 small"
+          href="javascript:void(0)"
+          data-bs-toggle="modal"
+          data-bs-target="#evaluationQrModal"
+        >
+          <i class="fa fa-qrcode text-primary me-2"></i>Evaluation Survey (QR Code)
+        </a>
+        <a
+          class="dropdown-item rounded py-2 small"
+          href="javascript:void(0)"
+          data-bs-toggle="modal"
+          data-bs-target="#confirmResetDemoModal"
+        >
+          <i class="fa fa-refresh text-muted me-2"></i>Reset All Demo Data
+        </a>
+      </div>
+    </div>
+
+    <!-- User Profile Dropdown -->
+    <div class="dropdown">
+      <button type="button" class="header-profile-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="/static/assets/images/default-avatar.svg" alt="Profile Avatar" class="avatar-sm">
+        <div class="text-start d-none d-md-block lh-sm">
+          <div class="fw-semibold" style="font-size: 0.8rem;">{{ user.display_name }}</div>
+          <div class="text-muted" style="font-size: 0.72rem;">{{ user.student_number }}</div>
+        </div>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+        <li class="px-3 py-2 border-bottom">
+          <div class="fw-semibold small">{{ user.formal_name }}</div>
+          <div class="text-muted" style="font-size: 0.74rem;">{{ user.course_code }} | {{ user.student_type }}</div>
+        </li>
+        <li><a class="dropdown-item small py-2" href="/profile"><i class="fe fe-user me-2"></i>My Profile</a></li>
+        <li><a class="dropdown-item small py-2" href="/account"><i class="fe fe-settings me-2"></i>Account Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item small py-2 text-danger" href="/signout"><i class="fe fe-log-out me-2"></i>Sign Out</a></li>
+      </ul>
+    </div>
+  </div>
+</header>

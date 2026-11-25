@@ -1,0 +1,153 @@
+{% extends "layouts/base_auth.html" %}
+
+{% block title %}Sign In | Student Portal - CvSU Imus{% endblock %}
+
+{% block content %}
+<div class="login-page-wrapper">
+  <div class="container-lg">
+    <div class="row justify-content-center mx-0">
+      <div class="col-xl-4 col-lg-5 col-md-7">
+        <div class="card shadow-none login-card mb-0">
+          <div class="card-body p-4 p-sm-5">
+            <div class="text-center mb-2">
+              <a href="/login">
+                <img src="/static/assets/images/logo-dark.png" alt="Cavite State University - Imus Campus" class="login-logo">
+              </a>
+            </div>
+
+            <div class="text-center mb-4">
+              <p class="mb-0 text-muted fs-13">Cavite State University - Imus City Campus</p>
+            </div>
+
+            {% if flashes %}
+              {% for item in flashes %}
+                <div class="alert alert-{{ item.category }} py-2 px-3 fs-13 mb-3">{{ item.message }}</div>
+              {% endfor %}
+            {% endif %}
+
+            {% if error %}
+              <div class="alert alert-danger py-2 px-3 fs-13 mb-3" role="alert">
+                {{ error }}
+              </div>
+            {% endif %}
+
+            <form method="post" action="/login" autocomplete="off">
+              <div class="mb-3">
+                <label for="username" class="form-label mb-2 fw-semibold">
+                  Student Number<span class="text-danger ms-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="form-control"
+                  value="{{ entered_username or '' }}"
+                  maxlength="20"
+                  required
+                  autofocus
+                >
+              </div>
+
+              <div class="mb-2">
+                <label for="password" class="form-label mb-2 fw-semibold">
+                  Password<span class="text-danger ms-1">*</span>
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  maxlength="30"
+                  required
+                >
+              </div>
+
+              <div class="text-center mb-4">
+                <a href="/account/verify" class="text-primary fs-13">Forgot Password?</a>
+              </div>
+
+              <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </div>
+
+              <div class="text-center">
+                <p class="mb-0 fs-13">
+                  Don't have an account yet?
+                  <a href="/account/register" class="text-primary ms-1">Register here</a>
+                </p>
+              </div>
+            </form>
+
+            <div class="text-center mt-3 pt-3 border-top fs-13 d-flex align-items-center justify-content-center gap-2 flex-wrap">
+              <a class="text-default" data-bs-toggle="offcanvas" href="#portalGuideOffcanvas" role="button" aria-controls="portalGuideOffcanvas">
+                Support
+              </a>
+              <span class="text-muted">|</span>
+              <div class="dropup dropup-center d-inline-block">
+                <a
+                  href="javascript:void(0)"
+                  class="text-primary fw-semibold dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  data-bs-auto-close="true"
+                  aria-expanded="false"
+                >
+                  Demo Accounts
+                </a>
+                <div class="dropdown-menu shadow border p-2 demo-accounts-overlay">
+                  <div class="px-2 py-1 fs-12 fw-semibold text-muted border-bottom mb-1">
+                    BSCS Simulation Accounts (1-Click Sign In)
+                  </div>
+                  {% for u in demo_users %}
+                  <a href="/demo-login/{{ u.student_number }}" class="dropdown-item rounded py-2 px-2">
+                    <div class="d-flex justify-content-between align-items-center gap-2">
+                      <span class="fw-semibold fs-13">{{ u.display_name }}</span>
+                      <span class="badge {% if u.role == 'adviser' %}bg-primary{% elif u.student_type == 'Irregular' %}bg-warning{% else %}bg-success{% endif %}">
+                        {{ u.student_type }}
+                      </span>
+                    </div>
+                    <div class="text-muted fs-11">
+                      {{ u.student_number }} &middot; {{ u.scenario_label }}
+                    </div>
+                  </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portal Guide Offcanvas (1:1 with Login.html) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="portalGuideOffcanvas" aria-labelledby="portalGuideTitle">
+  <div class="offcanvas-header border-bottom">
+    <h6 class="offcanvas-title fw-bold" id="portalGuideTitle">Portal Guide</h6>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body fs-13">
+    <h6 class="fw-semibold">Account Registration</h6>
+    <ul class="list-style-1 mb-4">
+      <li>Provide the requested information to register</li>
+      <li>Make sure to enter a working email address</li>
+      <li>Enter the information in the required format</li>
+      <li>Only students with enrollment record starting Academic Year 2014-2015 can register</li>
+    </ul>
+
+    <h6 class="fw-semibold">Trouble signing into your account</h6>
+    <ul class="list-style-1 mb-4">
+      <li>Account must be activated</li>
+      <li>Make sure to enter valid student number and password</li>
+      <li>Forgot your password? Click <a href="/account/verify" class="text-primary">here</a> to recover</li>
+    </ul>
+
+    <h6 class="fw-semibold">BSCS Research Demo Access</h6>
+    <p class="text-muted mb-0">
+      Click <strong>Demo Accounts</strong> at the bottom of the login form to switch directly into an
+      Irregular BSCS student, Regular BSCS block student, or Registration Adviser account
+      (default passwords: <code>demo123</code> for students, <code>adviser123</code> for adviser).
+    </p>
+  </div>
+</div>
+{% endblock %}

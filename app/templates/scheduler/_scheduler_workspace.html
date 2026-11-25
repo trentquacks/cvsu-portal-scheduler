@@ -1,0 +1,358 @@
+<div id="schedulerWorkspaceRoot">
+  <!-- Clean Top Header Strip -->
+  <div class="card">
+    <div class="card-body py-3">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <h5 class="mb-0 fw-semibold">AI-Driven Enrollment Scheduler (BSCS)</h5>
+          <span
+            id="advisingStatusBadge"
+            class="badge {% if latest_submission and latest_submission.status == 'APPROVED' %}bg-success{% elif latest_submission and latest_submission.status == 'PENDING_ADVISING' %}bg-warning{% elif latest_submission and latest_submission.status == 'REVISION_REQUESTED' %}bg-danger{% else %}bg-secondary{% endif %}"
+          >
+            {{ latest_submission.status.replace('_', ' ') if latest_submission else 'PRE-REGISTRATION DRAFT' }}
+          </span>
+        </div>
+        <div class="fs-13 text-muted">
+          {{ current_ay }} ({{ current_sem }} Semester)
+        </div>
+      </div>
+
+      {% if latest_submission and latest_submission.adviser_notes %}
+      <div class="alert alert-{{ 'success' if latest_submission.status == 'APPROVED' else 'warning' }} mt-3 mb-0 py-2 px-3 fs-13">
+        <strong>Adviser Remarks ({{ latest_submission.status.replace('_', ' ') }}):</strong>
+        {{ latest_submission.adviser_notes }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Dynamic JS Alert Banner -->
+  <div id="schedulerAlertBanner" class="alert d-none" role="alert"></div>
+
+  <!-- Main 3-Step Student Enrollment Workspace (Option A: Subjects -> Availability -> Master Schedule) -->
+  <div class="card">
+    <div class="card-header scheduler-tabs-header">
+      <ul class="nav nav-tabs scheduler-tabs" id="schedulerTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="tab-subjects-btn"
+            data-bs-toggle="tab"
+            data-bs-target="#tab-subjects"
+            type="button"
+            role="tab"
+          >
+            <span class="step-badge">1</span>Select Subjects
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="tab-matrix-btn"
+            data-bs-toggle="tab"
+            data-bs-target="#tab-matrix"
+            type="button"
+            role="tab"
+          >
+            <span class="step-badge">2</span>Weekly Availability
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="tab-master-btn"
+            data-bs-toggle="tab"
+            data-bs-target="#tab-master"
+            type="button"
+            role="tab"
+          >
+            <span class="step-badge">3</span>Master Schedule &amp; Advising
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card-body pt-4">
+      <div class="tab-content" id="schedulerTabContent">
+        <!-- ================================================================
+             STEP 1: Select Subjects (Clean Full-Width Table)
+             ================================================================ -->
+        <div class="tab-pane fade show active" id="tab-subjects" role="tabpanel">
+          <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+            <div>
+              <h6 class="fw-semibold mb-1">Offered BSCS Subjects ({{ current_ay }} &ndash; {{ current_sem }})</h6>
+              <p class="fs-13 text-muted mb-0">
+                Select the eligible subjects you want to enroll this semester. Prerequisite-locked subjects are automatically filtered from your academic record.
+              </p>
+            </div>
+            <span class="badge bg-primary fs-12" id="unitCapBadge">0 / 24 Units</span>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <button type="button" class="btn btn-sm btn-outline-primary" id="selectRecommendedBtn">
+                Select Recommended Load
+              </button>
+              <button type="button" class="btn btn-sm btn-light" id="clearSelectionBtn">
+                Clear Selection
+              </button>
+            </div>
+            <div class="form-check form-switch mb-0">
+              <input class="form-check-input" type="checkbox" role="switch" id="togglePinSectionsSwitch">
+              <label class="form-check-label fs-13 text-muted" for="togglePinSectionsSwitch">
+                Choose Specific Sections (Optional)
+              </label>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle mb-3">
+              <thead class="border-top">
+                <tr class="text-center text-nowrap">
+                  <th class="border-bottom-0 fw-semibold" style="width: 6%;">Pick</th>
+                  <th class="border-bottom-0 fw-semibold" style="width: 14%;">Subject Code</th>
+                  <th class="border-bottom-0 fw-semibold text-start">Subject Title</th>
+                  <th class="border-bottom-0 fw-semibold" style="width: 8%;">Units</th>
+                  <th class="border-bottom-0 fw-semibold" style="width: 18%;">Standing</th>
+                  <th class="border-bottom-0 fw-semibold d-none pin-section-col" style="width: 30%;">Section Preference</th>
+                </tr>
+              </thead>
+              <tbody id="courseSelectorBody">
+                <tr>
+                  <td colspan="6" class="text-center text-muted py-4">Loading BSCS offerings...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3 border-top">
+            <div class="fs-13 text-muted">
+              Selected: <strong class="text-default" id="selectedCourseCount">0</strong> subject(s) &nbsp;|&nbsp;
+              Total Units: <strong class="text-default" id="selectedUnitsCount">0</strong> / 24
+            </div>
+            <button type="button" class="btn btn-primary" id="nextToAvailabilityBtn">
+              Next: Weekly Availability <i class="fa fa-arrow-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             STEP 2: Weekly Availability Matrix (Optional) & Generate Schedule
+             ================================================================ -->
+        <div class="tab-pane fade" id="tab-matrix" role="tabpanel">
+          <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+            <div>
+              <h6 class="fw-semibold mb-1">Weekly Availability Matrix (Monday &ndash; Saturday, 7:00 AM &ndash; 8:00 PM)</h6>
+              <p class="fs-13 text-muted mb-0">
+                Optional: Click or drag across time slots to block hours you cannot attend (such as work shifts). If you have no schedule restrictions, keep slots available and generate your schedule.
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge bg-success">Available: <span id="matrixAvailableHours">78</span> hrs</span>
+              <span class="badge bg-danger">Blocked: <span id="matrixBlockedHours">0</span> hrs</span>
+            </div>
+          </div>
+
+          <!-- Quick Presets & Legend -->
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-sm btn-light" data-matrix-preset="block_weekday_mornings">
+                Block Weekday Mornings (7AM&ndash;1PM)
+              </button>
+              <button type="button" class="btn btn-sm btn-light" data-matrix-preset="block_weekday_afternoons">
+                Block Weekday Afternoons (1PM&ndash;5PM)
+              </button>
+              <button type="button" class="btn btn-sm btn-light" data-matrix-preset="block_evenings">
+                Block Evenings (5PM&ndash;8PM)
+              </button>
+              <button type="button" class="btn btn-sm btn-light" data-matrix-preset="block_saturday">
+                Block Saturday
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-primary" data-matrix-preset="clear">
+                Set All Available
+              </button>
+            </div>
+            <div class="fs-12 text-muted">
+              <span class="me-3">
+                <span class="matrix-legend-swatch" style="background: rgba(0,161,93,0.18); border: 1px solid rgba(0,161,93,0.4);"></span>Available
+              </span>
+              <span>
+                <span class="matrix-legend-swatch" style="background: rgba(232,38,70,0.18); border: 1px solid rgba(232,38,70,0.4);"></span>Blocked
+              </span>
+            </div>
+          </div>
+
+          <div class="table-responsive availability-matrix-wrap mb-4" id="availabilityMatrixContainer"></div>
+
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3 border-top">
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-light" id="backToSubjectsBtn">
+                <i class="fa fa-arrow-left me-2"></i>Back to Subjects
+              </button>
+              <button type="button" class="btn btn-outline-primary" id="saveMatrixBtn">
+                Save Availability
+              </button>
+            </div>
+            <button type="button" class="btn btn-primary" id="runSolverBtn">
+              <i class="fa fa-cogs me-2"></i>Generate Conflict-Free Schedule
+            </button>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             STEP 3: Conflict Diagnostics, Dynamic Swaps & Master Schedule
+             ================================================================ -->
+        <div class="tab-pane fade" id="tab-master" role="tabpanel">
+          <!-- Solver Telemetry, Conflict Report Log & Dynamic Section-Swapping Panel -->
+          <div id="solverDiagnosticsPanel" class="mb-4 d-none"></div>
+
+          <!-- Empty State (before first solve and no previous submission) -->
+          <div id="masterScheduleEmpty" class="text-center py-5">
+            <i class="fe fe-calendar d-block mx-auto text-muted mb-2" style="font-size: 2rem;"></i>
+            <h6 class="fw-semibold mb-1">No Master Schedule Generated Yet</h6>
+            <p class="fs-13 text-muted mb-3">
+              Choose your subjects in Step 1, set any blocked hours in Step 2, and generate your conflict-free schedule.
+            </p>
+            <button type="button" class="btn btn-sm btn-primary" id="emptyGoToSubjectsBtn">
+              Start at Step 1: Select Subjects
+            </button>
+          </div>
+
+          <!-- Generated Conflict-Free Schedule Content -->
+          <div id="masterScheduleContent" class="d-none">
+            <!-- Ranked Schedule Options Selector -->
+            <div class="d-flex flex-wrap gap-2 mb-3 d-none" id="scheduleOptionsBar"></div>
+
+            <!-- Action Header -->
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pb-3 mb-3 border-bottom">
+              <div>
+                <h6 class="fw-semibold mb-0" id="masterSummaryLabel">Conflict-Free Master Schedule</h6>
+                <div class="fs-13 text-muted" id="masterSummaryMetrics"></div>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="/api/scheduler/export-pdf" class="btn btn-sm btn-light" id="exportMasterPdfBtn">
+                  <i class="fa fa-download me-1"></i>Export Master Schedule (PDF)
+                </a>
+                <button type="button" class="btn btn-sm btn-primary" id="submitScheduleBtn">
+                  <i class="fa fa-paper-plane me-1"></i>Submit to Academic Adviser
+                </button>
+              </div>
+            </div>
+
+            <!-- Weekly Timetable Grid -->
+            <h6 class="fw-semibold fs-14 mb-2">Weekly Timetable (Monday &ndash; Saturday, 7:00 AM &ndash; 8:00 PM)</h6>
+            <div class="table-responsive mb-4" id="masterTimetableGrid"></div>
+
+            <!-- Formal Enlisted Sections Table -->
+            <h6 class="fw-semibold fs-14 mb-2">Master Schedule Breakdown</h6>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover align-middle mb-0">
+                <thead class="border-top">
+                  <tr class="text-center text-nowrap">
+                    <th class="border-bottom-0 fw-semibold">Schedule Code</th>
+                    <th class="border-bottom-0 fw-semibold">Subject Code</th>
+                    <th class="border-bottom-0 fw-semibold text-start">Subject Title</th>
+                    <th class="border-bottom-0 fw-semibold">Section</th>
+                    <th class="border-bottom-0 fw-semibold">Units (Lec/Lab)</th>
+                    <th class="border-bottom-0 fw-semibold">Schedule</th>
+                    <th class="border-bottom-0 fw-semibold">Instructor</th>
+                  </tr>
+                </thead>
+                <tbody id="masterScheduleTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     Presenter / Evaluation Modal: Transcript & Prerequisite DAG Simulator
+     (Kept completely separate from student workflow; opened via Topbar Demo Menu)
+     ========================================================================== -->
+<div class="modal fade" id="demoTranscriptModal" tabindex="-1" aria-labelledby="demoTranscriptModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h5 class="modal-title fw-semibold" id="demoTranscriptModalLabel">
+            Presenter Sandbox: BSCS Transcript &amp; Prerequisite DAG Simulator
+          </h5>
+          <div class="fs-12 text-muted">
+            Demo Evaluation Tool &mdash; In production, academic standing is read-only from official Registrar records.
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+          <div class="btn-group btn-group-sm" role="group">
+            <button type="button" class="btn btn-outline-primary active" data-transcript-filter="ALL">All 57 Courses</button>
+            <button type="button" class="btn btn-outline-primary" data-transcript-filter="ELIGIBLE">Eligible / Overridden</button>
+            <button type="button" class="btn btn-outline-primary" data-transcript-filter="LOCKED">Locked (Unmet Prereqs)</button>
+            <button type="button" class="btn btn-outline-primary" data-transcript-filter="FAILED">Failed (Retakes)</button>
+          </div>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <span class="badge bg-success">Completed: <span id="statCompletedCount">0</span></span>
+            <span class="badge bg-primary">Eligible: <span id="statEligibleCount">0</span></span>
+            <span class="badge bg-danger">Locked: <span id="statLockedCount">0</span></span>
+            <button type="button" class="btn btn-sm btn-light" id="resetTranscriptBtn">
+              <i class="fa fa-undo me-1"></i>Reset to Persona Defaults
+            </button>
+          </div>
+        </div>
+
+        <div class="table-responsive border rounded scheduler-scroll-table" style="max-height: 55vh; overflow-y: auto;">
+          <table class="table table-bordered table-hover align-middle mb-0">
+            <thead class="sticky-top">
+              <tr class="text-center text-nowrap">
+                <th class="fw-semibold">Subject Code</th>
+                <th class="fw-semibold text-start">Subject Title</th>
+                <th class="fw-semibold">Term</th>
+                <th class="fw-semibold">Units</th>
+                <th class="fw-semibold">Pre-Requisite(s)</th>
+                <th class="fw-semibold">Simulated Standing</th>
+                <th class="fw-semibold">DAG Status</th>
+                <th class="fw-semibold">Offered</th>
+              </tr>
+            </thead>
+            <tbody id="transcriptTableBody">
+              <tr>
+                <td colspan="8" class="text-center text-muted py-4">Loading BSCS curriculum graph...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal before Submitting Master Schedule to Academic Adviser -->
+<div class="modal fade" id="confirmSubmitModal" tabindex="-1" aria-labelledby="confirmSubmitModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-semibold" id="confirmSubmitModalLabel">Confirm Schedule Submission</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-3">
+          Are you sure you want to submit this conflict-free master schedule to your Department Registration Adviser for review and sign-off?
+        </p>
+        <div class="alert alert-light mb-0" id="confirmSubmitSummary"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" id="confirmSubmitActionBtn">
+          <i class="fa fa-paper-plane me-1"></i>Confirm &amp; Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

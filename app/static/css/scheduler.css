@@ -1,0 +1,325 @@
+/* ============================================================================
+   AI-Driven Enrollment Scheduler & Toggle Availability Matrix Styles
+   Aligned 1:1 with CvSU-Imus Student Portal visual design (Light & Dark Mode)
+   ============================================================================ */
+
+/* Workflow Step Navigation Tabs (Clean Underline, Zero Bootstrap Box Misalignment) */
+.scheduler-tabs-header {
+  padding: 0 1.25rem !important;
+  border-bottom: 1px solid var(--cvsu-header-border);
+}
+
+.scheduler-tabs {
+  border-bottom: 0 !important;
+  margin: 0 !important;
+  gap: 0.25rem;
+}
+
+.scheduler-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.scheduler-tabs .nav-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--cvsu-text-muted);
+  font-weight: 500;
+  font-size: 0.875rem;
+  border: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  padding: 0.9rem 1.15rem;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.scheduler-tabs .nav-link:hover {
+  color: var(--cvsu-primary);
+  border-bottom-color: rgba(var(--cvsu-primary-rgb), 0.3) !important;
+}
+
+.scheduler-tabs .nav-link.active {
+  color: var(--cvsu-primary) !important;
+  background-color: transparent !important;
+  border-bottom: 2px solid var(--cvsu-primary) !important;
+  font-weight: 600;
+}
+
+/* Sticky Table Headers inside Scrollable Scheduler Tables */
+.scheduler-scroll-table thead.sticky-top th {
+  background-color: var(--cvsu-surface-subtle);
+  border-bottom: 1px solid var(--cvsu-header-border);
+  z-index: 2;
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background-color: rgba(var(--cvsu-primary-rgb), 0.14);
+  color: var(--cvsu-primary);
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.scheduler-tabs .nav-link.active .step-badge {
+  background-color: var(--cvsu-primary);
+  color: #ffffff;
+}
+
+/* Interactive Time-Slot Toggle Matrix (Mon-Sat, 7:00 AM - 8:00 PM) */
+.availability-matrix-wrap {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.availability-matrix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 3px;
+  table-layout: fixed;
+}
+
+.availability-matrix-table th {
+  text-align: center;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.45rem 0.25rem;
+  background-color: var(--cvsu-surface-subtle);
+  color: var(--cvsu-text);
+  border-radius: 0.25rem;
+}
+
+.availability-matrix-table .time-col {
+  width: 112px;
+  text-align: right;
+  padding-right: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--cvsu-text-muted);
+  white-space: nowrap;
+}
+
+.matrix-cell {
+  height: 30px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.71rem;
+  font-weight: 500;
+  transition: background-color 0.08s ease, border-color 0.08s ease;
+  border: 1px solid transparent;
+}
+
+.matrix-cell.is-available {
+  background-color: rgba(var(--cvsu-primary-rgb), 0.14);
+  border-color: rgba(var(--cvsu-primary-rgb), 0.3);
+  color: var(--cvsu-primary-dark);
+}
+
+.matrix-cell.is-available:hover {
+  background-color: rgba(var(--cvsu-primary-rgb), 0.26);
+}
+
+.matrix-cell.is-blocked {
+  background-color: rgba(232, 38, 70, 0.15);
+  border-color: rgba(232, 38, 70, 0.35);
+  color: #b81d38;
+}
+
+.matrix-cell.is-blocked:hover {
+  background-color: rgba(232, 38, 70, 0.26);
+}
+
+[data-theme-mode="dark"] .matrix-cell.is-available {
+  color: #6ee7b7;
+}
+
+[data-theme-mode="dark"] .matrix-cell.is-blocked {
+  color: #fda4af;
+}
+
+.matrix-legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
+/* Subject Selection List */
+.course-select-row {
+  transition: background-color 0.12s ease;
+}
+
+.course-select-row.is-selected {
+  background-color: rgba(var(--cvsu-primary-rgb), 0.06);
+}
+
+.course-select-row.is-locked {
+  opacity: 0.72;
+}
+
+/* Conflict Report Log Cards */
+.conflict-log-item {
+  border-left: 3px solid var(--cvsu-danger);
+  background-color: rgba(232, 38, 70, 0.07);
+  border-radius: 0.25rem;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.conflict-log-item.severity-warning {
+  border-left-color: var(--cvsu-warning);
+  background-color: rgba(247, 183, 37, 0.1);
+}
+
+/* Dynamic Swap Recommendation Card */
+.swap-card {
+  border: 1px solid rgba(var(--cvsu-primary-rgb), 0.32);
+  border-left: 4px solid var(--cvsu-primary);
+  border-radius: 0.35rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--cvsu-surface);
+  margin-bottom: 0.75rem;
+}
+
+.swap-metric-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  border: 1px solid var(--cvsu-border);
+  background-color: var(--cvsu-surface-subtle);
+  color: var(--cvsu-text-muted);
+  white-space: nowrap;
+}
+
+/* Precision CSS Grid Weekly Master Schedule Timetable (Exact Full-Span Hour Alignment) */
+.timetable-grid {
+  display: grid;
+  grid-template-columns: 98px repeat(6, minmax(130px, 1fr));
+  grid-template-rows: 40px repeat(13, 56px);
+  border-top: 1px solid var(--cvsu-border);
+  border-left: 1px solid var(--cvsu-border);
+  background-color: var(--cvsu-surface);
+  font-size: 0.75rem;
+}
+
+.tt-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--cvsu-text);
+  background-color: var(--cvsu-surface-subtle);
+  border-right: 1px solid var(--cvsu-border);
+  border-bottom: 1px solid var(--cvsu-border);
+  padding: 0 0.4rem;
+}
+
+.tt-time {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.35rem 0.55rem 0 0;
+  font-size: 0.72rem;
+  color: var(--cvsu-text-muted);
+  background-color: var(--cvsu-surface-subtle);
+  border-right: 1px solid var(--cvsu-border);
+  border-bottom: 1px solid var(--cvsu-border);
+  white-space: nowrap;
+}
+
+.tt-cell {
+  border-right: 1px solid var(--cvsu-border);
+  border-bottom: 1px solid var(--cvsu-border);
+  z-index: 1;
+}
+
+.tt-cell.slot-blocked {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(232, 38, 70, 0.08),
+    rgba(232, 38, 70, 0.08) 5px,
+    transparent 5px,
+    transparent 10px
+  );
+}
+
+.tt-event-wrap {
+  padding: 4px;
+  z-index: 2;
+  min-width: 0;
+  min-height: 0;
+}
+
+.timetable-event {
+  border-radius: 0.25rem;
+  padding: 0.32rem 0.5rem;
+  background-color: rgba(var(--cvsu-primary-rgb), 0.14);
+  border-left: 3px solid var(--cvsu-primary);
+  color: var(--cvsu-text);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.timetable-event.event-lab {
+  background-color: rgba(23, 177, 223, 0.14);
+  border-left-color: #17b1df;
+}
+
+[data-theme-mode="dark"] .timetable-event {
+  background-color: rgba(0, 161, 93, 0.24);
+}
+
+[data-theme-mode="dark"] .timetable-event.event-lab {
+  background-color: rgba(23, 177, 223, 0.24);
+}
+
+.timetable-event-code {
+  font-weight: 600;
+  font-size: 0.74rem;
+  line-height: 1.25;
+}
+
+.timetable-event-meta {
+  font-size: 0.68rem;
+  color: var(--cvsu-text-muted);
+  line-height: 1.25;
+}
+
+/* Schedule Option Selector Pills */
+.option-selector-card {
+  border: 1px solid var(--cvsu-border);
+  border-radius: 0.35rem;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  background-color: var(--cvsu-surface);
+  color: var(--cvsu-text);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.option-selector-card:hover {
+  border-color: var(--cvsu-primary);
+}
+
+.option-selector-card.active {
+  border-color: var(--cvsu-primary);
+  background-color: rgba(var(--cvsu-primary-rgb), 0.1);
+}

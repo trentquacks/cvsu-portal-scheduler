@@ -1,0 +1,596 @@
+{
+  "program_code": "BSCS",
+  "program_name": "Bachelor of Science in Computer Science",
+  "campus": "Cavite State University - Imus Campus",
+  "curriculum_year": "2024-2025",
+  "max_units_regular": 24,
+  "courses": [
+    {
+      "code": "GNED 02",
+      "title": "ETHICS",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "GNED 05",
+      "title": "PURPOSIVE COMMUNICATION",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "GNED 11",
+      "title": "KONTEKSTWALISADONG KOMUNIKASYON SA FILIPINO",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "COSC 50A",
+      "title": "DISCRETE STRUCTURE",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "DCIT 21A",
+      "title": "INTRODUCTION TO COMPUTING",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "DCIT 22A",
+      "title": "COMPUTER PROGRAMMING 1",
+      "lec_units": 1,
+      "lab_units": 2,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "FITT 1",
+      "title": "MOVEMENT ENHANCEMENT",
+      "lec_units": 2,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "CVSU 101",
+      "title": "INSTITUTIONAL ORIENTATION",
+      "lec_units": 1,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "NSTP 1",
+      "title": "NATIONAL SERVICE TRAINING PROGRAM 1",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "GNED 01",
+      "title": "ART APPRECIATION",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "GNED 03",
+      "title": "MATHEMATICS IN THE MODERN WORLD",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "GNED 06",
+      "title": "SCIENCE, TECHNOLOGY AND SOCIETY",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "GNED 12",
+      "title": "DALUMAT NG/SA FILIPINO",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["GNED 11"]
+    },
+    {
+      "code": "DCIT 23A",
+      "title": "COMPUTER PROGRAMMING 2",
+      "lec_units": 1,
+      "lab_units": 2,
+      "year_level": 1,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["DCIT 22A"]
+    },
+    {
+      "code": "ITEC 50A",
+      "title": "WEB SYSTEM AND TECHNOLOGIES 1",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 1,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["DCIT 21A"]
+    },
+    {
+      "code": "FITT 2",
+      "title": "FITNESS EXERCISE",
+      "lec_units": 2,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["FITT 1"]
+    },
+    {
+      "code": "NSTP 2",
+      "title": "NATIONAL SERVICE TRAINING PROGRAM 2",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 1,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["NSTP 1"]
+    },
+    {
+      "code": "GNED 04",
+      "title": "MGA BABASAHIN HINGGIL SA KASAYSAYAN NG PILIPINAS",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "MATH 1A",
+      "title": "ANALYTIC GEOMETRY",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["GNED 03"]
+    },
+    {
+      "code": "COSC 55A",
+      "title": "DISCRETE STRUCTURES 2",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["COSC 50A"]
+    },
+    {
+      "code": "COSC 60B",
+      "title": "DIGITAL LOGIC DESIGN",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 2,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["COSC 50A", "DCIT 23A"]
+    },
+    {
+      "code": "DCIT 50A",
+      "title": "OBJECT ORIENTED PROGRAMMING",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 2,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["DCIT 23A"]
+    },
+    {
+      "code": "DCIT 24A",
+      "title": "INFORMATION MANAGEMENT",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 2,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["DCIT 23A"]
+    },
+    {
+      "code": "INSY 50",
+      "title": "FUNDAMENTALS OF INFORMATION SYSTEMS",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["DCIT 21A"]
+    },
+    {
+      "code": "FITT 3",
+      "title": "PHYSICAL ACTIVITIES TOWARDS HEALTH AND FITNESS 1",
+      "lec_units": 2,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["FITT 1"]
+    },
+    {
+      "code": "GNED 08",
+      "title": "UNDERSTANDING THE SELF",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "GNED 14",
+      "title": "PANITIKANG PANLIPUNAN",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "MATH 2A",
+      "title": "CALCULUS",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["MATH 1A"]
+    },
+    {
+      "code": "COSC 65B",
+      "title": "ARCHITECTURE AND ORGANIZATION",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 2,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["COSC 60B"]
+    },
+    {
+      "code": "COSC 70A",
+      "title": "SOFTWARE ENGINEERING 1",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["DCIT 50A", "DCIT 24A"]
+    },
+    {
+      "code": "DCIT 25A",
+      "title": "DATA STRUCTURES AND ALGORITHMS",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 2,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["DCIT 50A"]
+    },
+    {
+      "code": "DCIT 55A",
+      "title": "ADVANCE DATABASE MANAGEMENT SYSTEM",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 2,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["DCIT 24A"]
+    },
+    {
+      "code": "FITT 4",
+      "title": "PHYSICAL ACTIVITIES TOWARDS HEALTH AND FITNESS 2",
+      "lec_units": 2,
+      "lab_units": 0,
+      "year_level": 2,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["FITT 1"]
+    },
+    {
+      "code": "MATH 3A",
+      "title": "LINEAR ALGEBRA",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["MATH 2A"]
+    },
+    {
+      "code": "COSC 75A",
+      "title": "SOFTWARE ENGINEERING II",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 3,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["COSC 70A"]
+    },
+    {
+      "code": "COSC 80B",
+      "title": "OPERATING SYSTEMS",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 3,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["DCIT 25A"]
+    },
+    {
+      "code": "COSC 85A",
+      "title": "NETWORKS AND COMMUNICATION",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 3,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["ITEC 50A"]
+    },
+    {
+      "code": "COSC 101",
+      "title": "CS ELECTIVE 1 (COMPUTER GRAPHICS AND VISUAL COMPUTING)",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 3,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["DCIT 23A"]
+    },
+    {
+      "code": "DCIT 26A",
+      "title": "APPLICATION DEVT AND EMERGING TECHNOLOGIES",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 3,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["ITEC 50A"]
+    },
+    {
+      "code": "DCIT 65A",
+      "title": "SOCIAL AND PROFESSIONAL ISSUES",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["DCIT 50A", "DCIT 55A", "DCIT 25A"]
+    },
+    {
+      "code": "GNED 09",
+      "title": "RIZAL'S LIFE AND WORKS",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["GNED 04"]
+    },
+    {
+      "code": "MATH 4B",
+      "title": "EXPERIMENTAL STATISTICS",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["MATH 2A"]
+    },
+    {
+      "code": "COSC 90",
+      "title": "DESIGN AND ANALYSIS OF ALGORITHM",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["DCIT 25A"]
+    },
+    {
+      "code": "COSC 95",
+      "title": "PROGRAMMING LANGUAGES",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["DCIT 25A"]
+    },
+    {
+      "code": "COSC 106",
+      "title": "CS ELECTIVE 2 (INTRODUCTION TO GAME DEVELOPMENT)",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 3,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["MATH 3A", "COSC 101"]
+    },
+    {
+      "code": "DCIT 60B",
+      "title": "METHODS OF RESEARCH",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": [
+        "COSC 50A", "DCIT 21A", "DCIT 22A", "DCIT 23A", "ITEC 50A",
+        "COSC 55A", "COSC 60B", "DCIT 50A", "DCIT 24A", "INSY 50",
+        "COSC 65B", "COSC 70A", "DCIT 25A", "DCIT 55A",
+        "COSC 75A", "COSC 80B", "COSC 85A", "COSC 101", "DCIT 26A", "DCIT 65A"
+      ]
+    },
+    {
+      "code": "ITEC 85C",
+      "title": "INFORMATION ASSURANCE AND SECURITY",
+      "lec_units": 2,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["DCIT 24A"]
+    },
+    {
+      "code": "GNED 10A",
+      "title": "GENDER AND SOCIETY",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "COSC 199B",
+      "title": "PRACTICUM",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 3,
+      "semester": "SUMMER",
+      "major": "N/A",
+      "prerequisites": [
+        "COSC 50A", "DCIT 21A", "DCIT 22A", "DCIT 23A", "ITEC 50A",
+        "COSC 55A", "COSC 60B", "DCIT 50A", "DCIT 24A", "INSY 50",
+        "COSC 65B", "COSC 70A", "DCIT 25A", "DCIT 55A",
+        "COSC 75A", "COSC 80B", "COSC 85A", "COSC 101", "DCIT 26A", "DCIT 65A",
+        "COSC 90", "COSC 95", "COSC 106", "DCIT 60B", "ITEC 85C"
+      ]
+    },
+    {
+      "code": "ITEC 80D",
+      "title": "HUMAN COMPUTER INTERACTION",
+      "lec_units": 1,
+      "lab_units": 0,
+      "year_level": 4,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["ITEC 85C"]
+    },
+    {
+      "code": "COSC 100B",
+      "title": "AUTOMATA THEORY AND FORMAL LANGUAGES",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 4,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["COSC 90"]
+    },
+    {
+      "code": "COSC 105",
+      "title": "INTELLIGENT SYSTEMS",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 4,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["MATH 4B", "COSC 55A", "DCIT 50A"]
+    },
+    {
+      "code": "COSC 111B",
+      "title": "CS ELECTIVE 3 (INTERNET OF THINGS)",
+      "lec_units": 2,
+      "lab_units": 1,
+      "year_level": 4,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": ["COSC 60B"]
+    },
+    {
+      "code": "COSC 200-A",
+      "title": "UNDERGRADUATE THESIS I",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 4,
+      "semester": "FIRST",
+      "major": "N/A",
+      "prerequisites": [
+        "COSC 50A", "DCIT 21A", "DCIT 22A", "DCIT 23A", "ITEC 50A",
+        "COSC 55A", "COSC 60B", "DCIT 50A", "DCIT 24A", "INSY 50",
+        "COSC 65B", "COSC 70A", "DCIT 25A", "DCIT 55A",
+        "COSC 75A", "COSC 80B", "COSC 85A", "COSC 101", "DCIT 26A", "DCIT 65A",
+        "COSC 90", "COSC 95", "COSC 106", "DCIT 60B", "ITEC 85C", "COSC 199B"
+      ]
+    },
+    {
+      "code": "GNED 07",
+      "title": "THE CONTEMPORARY WORLD",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 4,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": []
+    },
+    {
+      "code": "COSC 110",
+      "title": "NUMERICAL AND SYMBOLIC COMPUTATION",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 4,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["COSC 60B"]
+    },
+    {
+      "code": "COSC 200-B",
+      "title": "UNDERGRADUATE THESIS II",
+      "lec_units": 3,
+      "lab_units": 0,
+      "year_level": 4,
+      "semester": "SECOND",
+      "major": "N/A",
+      "prerequisites": ["COSC 200-A"]
+    }
+  ]
+}

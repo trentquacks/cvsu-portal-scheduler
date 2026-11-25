@@ -1,0 +1,129 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-xl-6">
+    <form method="post" action="/account/contact">
+      <div class="card">
+        <div class="card-header">
+          <p class="mb-0">Update Contact Details</p>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="personal_email" class="form-label">Email Address <span class="text-red">*</span></label>
+              <input
+                type="email"
+                class="form-control"
+                id="personal_email"
+                name="personal_email"
+                value="{{ user.personal_email }}"
+                maxlength="80"
+                required
+              >
+            </div>
+            <div class="form-group col-md-12">
+              <label for="mobile_number" class="form-label">Mobile Number <span class="text-red">*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="mobile_number"
+                name="mobile_number"
+                value="{{ user.mobile_number }}"
+                maxlength="11"
+                required
+              >
+              <div class="form-text text-center">Format: 11 digit number (09XXXXXXXXX)</div>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="guardian_name" class="form-label">Guardian Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="guardian_name"
+                name="guardian_name"
+                value="{{ user.guardian_name }}"
+                maxlength="100"
+              >
+            </div>
+            <div class="form-group col-md-12 mb-0">
+              <label for="guardian_number" class="form-label">Guardian Contact Number</label>
+              <input
+                type="text"
+                class="form-control"
+                id="guardian_number"
+                name="guardian_number"
+                value="{{ user.guardian_number }}"
+                maxlength="15"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="float-end btn-list">
+            <button type="reset" class="btn btn-light">Clear</button>
+            <button type="submit" class="btn btn-primary">Update Contact</button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-xl-6">
+    <form method="post" action="/account/password">
+      <div class="card">
+        <div class="card-header">
+          <p class="mb-0">Change Password</p>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="current_password" class="form-label">Current Password <span class="text-red">*</span></label>
+              <input
+                type="password"
+                class="form-control"
+                id="current_password"
+                name="current_password"
+                maxlength="30"
+                required
+              >
+            </div>
+            <div class="form-group col-md-12">
+              <label for="new_password" class="form-label">New Password <span class="text-red">*</span></label>
+              <input
+                type="password"
+                class="form-control"
+                id="new_password"
+                name="new_password"
+                minlength="6"
+                maxlength="30"
+                required
+              >
+            </div>
+            <div class="form-group col-md-12 mb-0">
+              <label for="confirm_password" class="form-label">Confirm Password <span class="text-red">*</span></label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirm_password"
+                name="confirm_password"
+                minlength="6"
+                maxlength="30"
+                required
+              >
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="float-end btn-list">
+            <button type="reset" class="btn btn-light">Clear</button>
+            <button type="submit" class="btn btn-primary">Change Password</button>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

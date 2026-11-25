@@ -1,0 +1,1091 @@
+/* ============================================================================
+   Cavite State University - Imus Campus Student Portal Theme
+   1:1 Authentic Sash / Bootstrap 5.3.2 Styling (Light & Dark Mode)
+   ============================================================================ */
+
+:root {
+  --cvsu-primary: #00a15d;
+  --cvsu-primary-dark: #00874e;
+  --cvsu-primary-rgb: 0, 161, 93;
+  --cvsu-body-bg: #f3f6f9;
+  --cvsu-login-bg: #e7eaf6;
+  --cvsu-surface: #ffffff;
+  --cvsu-surface-subtle: #f3f6f9;
+  --cvsu-hover-bg: #f3f6f8;
+  --cvsu-border: #e9edf4;
+  --cvsu-header-border: #edebeb;
+  --cvsu-text: #212427;
+  --cvsu-text-muted: #7987a1;
+  --cvsu-sidebar-width: 15rem;
+  --cvsu-header-height: 3.75rem;
+  --cvsu-success: #44b86c;
+  --cvsu-warning: #f7b725;
+  --cvsu-info: #17b1df;
+  --cvsu-danger: #e82646;
+
+  /* Override Bootstrap 5.3 default blue tokens globally */
+  --bs-primary: #00a15d;
+  --bs-primary-rgb: 0, 161, 93;
+  --bs-success: #44b86c;
+  --bs-success-rgb: 68, 184, 108;
+  --bs-danger: #e82646;
+  --bs-danger-rgb: 232, 38, 70;
+  --bs-info: #17b1df;
+  --bs-info-rgb: 23, 177, 223;
+  --bs-warning: #f7b725;
+  --bs-warning-rgb: 247, 183, 37;
+  --bs-link-color: #00a15d;
+  --bs-link-color-rgb: 0, 161, 93;
+  --bs-link-hover-color: #00874e;
+  --bs-link-hover-color-rgb: 0, 135, 78;
+}
+
+[data-theme-mode="dark"] {
+  --cvsu-body-bg: #161922;
+  --cvsu-login-bg: #161922;
+  --cvsu-surface: #1f2430;
+  --cvsu-surface-subtle: #262c3a;
+  --cvsu-hover-bg: rgba(255, 255, 255, 0.05);
+  --cvsu-border: #2f3646;
+  --cvsu-header-border: #2f3646;
+  --cvsu-text: #e6eaf2;
+  --cvsu-text-muted: #a3afc2;
+
+  /* Full Bootstrap 5.3 dark color tokens so cards, muted text, placeholders & breadcrumbs stay crisp */
+  --bs-body-bg: #161922;
+  --bs-body-bg-rgb: 22, 25, 34;
+  --bs-body-color: #e6eaf2;
+  --bs-body-color-rgb: 230, 234, 242;
+  --bs-emphasis-color: #ffffff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-secondary-color: #a3afc2;
+  --bs-secondary-color-rgb: 163, 175, 194;
+  --bs-tertiary-color: #8895ab;
+  --bs-secondary-bg: #1f2430;
+  --bs-tertiary-bg: #262c3a;
+  --bs-border-color: #2f3646;
+  --bs-heading-color: #f1f5f9;
+  --bs-card-bg: #1f2430;
+  --bs-card-color: #e6eaf2;
+  --bs-card-border-color: #2f3646;
+  --bs-link-color: #2fd189;
+  --bs-link-hover-color: #5ee3a6;
+}
+
+/* Base Typography */
+html,
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--cvsu-text);
+  background-color: var(--cvsu-body-bg);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--cvsu-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cvsu-primary-dark);
+}
+
+/* Sash Utility Typography & Helpers */
+.fw-semibold {
+  font-weight: 500 !important;
+}
+
+.fs-11 { font-size: 0.6875rem !important; }
+.fs-12 { font-size: 0.75rem !important; }
+.fs-13 { font-size: 0.8125rem !important; }
+.fs-14 { font-size: 0.875rem !important; }
+.fs-15 { font-size: 0.9375rem !important; }
+.fs-18 { font-size: 1.125rem !important; }
+.fs-20 { font-size: 1.25rem !important; }
+
+.text-default {
+  color: var(--cvsu-text) !important;
+}
+
+.text-gray-600 {
+  color: var(--cvsu-text-muted) !important;
+}
+
+.text-red {
+  color: var(--cvsu-danger) !important;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.br-5 {
+  border-radius: 5px !important;
+}
+
+.min-w-fit-content {
+  min-width: fit-content;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.form-row > .col,
+.form-row > [class*="col-"] {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-list {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.list-style-1 {
+  list-style-type: disc;
+  padding-left: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.list-style-1 li {
+  margin-bottom: 0.3rem;
+}
+
+/* Primary & Semantic Bootstrap Overrides (Zero Bootstrap Blue Leak) */
+.text-primary {
+  color: var(--cvsu-primary) !important;
+}
+
+.text-success {
+  color: var(--cvsu-success) !important;
+}
+
+.text-danger {
+  color: var(--cvsu-danger) !important;
+}
+
+.text-info {
+  color: var(--cvsu-info) !important;
+}
+
+.text-warning {
+  color: var(--cvsu-warning) !important;
+}
+
+.bg-primary {
+  background-color: var(--cvsu-primary) !important;
+}
+
+.btn-primary {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--cvsu-primary);
+  --bs-btn-border-color: var(--cvsu-primary);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--cvsu-primary-dark);
+  --bs-btn-hover-border-color: var(--cvsu-primary-dark);
+  --bs-btn-focus-shadow-rgb: 0, 161, 93;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--cvsu-primary-dark);
+  --bs-btn-active-border-color: var(--cvsu-primary-dark);
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: var(--cvsu-primary);
+  --bs-btn-disabled-border-color: var(--cvsu-primary);
+  background-color: var(--cvsu-primary) !important;
+  border-color: var(--cvsu-primary) !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--cvsu-primary-dark) !important;
+  border-color: var(--cvsu-primary-dark) !important;
+  color: #ffffff !important;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--cvsu-primary);
+  --bs-btn-border-color: var(--cvsu-primary);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--cvsu-primary);
+  --bs-btn-hover-border-color: var(--cvsu-primary);
+  --bs-btn-focus-shadow-rgb: 0, 161, 93;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--cvsu-primary);
+  --bs-btn-active-border-color: var(--cvsu-primary);
+  --bs-btn-disabled-color: var(--cvsu-primary);
+  --bs-btn-disabled-border-color: var(--cvsu-primary);
+  color: var(--cvsu-primary) !important;
+  border-color: var(--cvsu-primary) !important;
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus-visible,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.show,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary {
+  background-color: var(--cvsu-primary) !important;
+  border-color: var(--cvsu-primary) !important;
+  color: #ffffff !important;
+}
+
+.btn-light {
+  color: var(--cvsu-text);
+  background-color: var(--cvsu-surface-subtle);
+  border-color: var(--cvsu-border);
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+  color: var(--cvsu-text);
+  background-color: #e6ebf2;
+  border-color: #dde3ec;
+}
+
+[data-theme-mode="dark"] .btn-light:hover {
+  background-color: #323a4c;
+  border-color: #3e475c;
+}
+
+.btn-primary-light {
+  background-color: rgba(var(--cvsu-primary-rgb), 0.12);
+  color: var(--cvsu-primary);
+  border: 1px solid transparent;
+}
+
+.btn-primary-light:hover {
+  background-color: var(--cvsu-primary);
+  color: #ffffff;
+}
+
+/* Checkboxes & Switches */
+.form-check-input:checked {
+  background-color: var(--cvsu-primary);
+  border-color: var(--cvsu-primary);
+}
+
+.form-check-input:focus {
+  border-color: var(--cvsu-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--cvsu-primary-rgb), 0.2);
+}
+
+/* Solid Authentic CvSU Portal Badges (1:1 with Grades.html, Checklist, Subjects Offered) */
+.badge {
+  border-radius: 0.1875rem;
+  font-weight: 500;
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+.badge.bg-success {
+  background-color: var(--cvsu-success) !important;
+  color: #ffffff !important;
+}
+
+.badge.bg-danger {
+  background-color: var(--cvsu-danger) !important;
+  color: #ffffff !important;
+}
+
+.badge.bg-info {
+  background-color: var(--cvsu-info) !important;
+  color: #ffffff !important;
+}
+
+.badge.bg-warning {
+  background-color: var(--cvsu-warning) !important;
+  color: #ffffff !important;
+}
+
+.badge.bg-primary {
+  background-color: var(--cvsu-primary) !important;
+  color: #ffffff !important;
+}
+
+.badge.bg-secondary {
+  background-color: #7987a1 !important;
+  color: #ffffff !important;
+}
+
+/* Soft Tinted Containers (used for Dashboard KPI Avatar Boxes & Subtle Tags) */
+.bg-primary-transparent {
+  background-color: rgba(var(--cvsu-primary-rgb), 0.12) !important;
+  color: var(--cvsu-primary) !important;
+}
+
+.bg-success-transparent {
+  background-color: rgba(68, 184, 108, 0.14) !important;
+  color: #21884b !important;
+}
+
+.bg-danger-transparent {
+  background-color: rgba(232, 38, 70, 0.12) !important;
+  color: #e82646 !important;
+}
+
+.bg-warning-transparent {
+  background-color: rgba(247, 183, 37, 0.16) !important;
+  color: #d9950b !important;
+}
+
+.bg-info-transparent {
+  background-color: rgba(23, 177, 223, 0.14) !important;
+  color: #17b1df !important;
+}
+
+.bg-secondary-transparent {
+  background-color: rgba(121, 135, 161, 0.16) !important;
+  color: #5b677d !important;
+}
+
+/* Cards & Alerts (Spacious 1:1 Sash Proportions) */
+.card {
+  background-color: var(--cvsu-surface);
+  border: 0;
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--cvsu-header-border);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-header p {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--cvsu-text);
+}
+
+.card-title {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: var(--cvsu-text);
+}
+
+.card-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top: 1px solid var(--cvsu-header-border);
+  padding: 0.85rem 1.5rem;
+}
+
+.alert-light {
+  background-color: var(--cvsu-surface-subtle);
+  border-color: var(--cvsu-surface-subtle);
+  color: var(--cvsu-text);
+  padding: 0.7rem 1rem;
+  font-size: 0.8125rem;
+  border-radius: 0.25rem;
+}
+
+/* ============================================================================
+   Login Page (1:1 Match with CvSU-Imus Login.html)
+   ============================================================================ */
+body.login-img {
+  background-color: var(--cvsu-login-bg);
+}
+
+.login-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+}
+
+.login-card {
+  background-color: var(--cvsu-surface);
+  border: 0;
+  border-radius: 0.45rem;
+}
+
+.login-logo {
+  max-height: 44px;
+  width: auto;
+}
+
+.demo-accounts-overlay {
+  width: 360px;
+  max-width: calc(100vw - 2rem);
+  border-radius: 0.45rem;
+  z-index: 1050;
+  overflow: hidden;
+}
+
+.demo-accounts-overlay .dropdown-item,
+.demo-persona-menu .dropdown-item {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.form-control,
+.form-select {
+  background-color: var(--cvsu-surface);
+  border-color: var(--cvsu-border);
+  color: var(--cvsu-text);
+  font-size: 0.875rem;
+  padding: 0.48rem 0.75rem;
+}
+
+.form-control::placeholder {
+  color: var(--cvsu-text-muted);
+  opacity: 0.85;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--cvsu-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--cvsu-primary-rgb), 0.16);
+  background-color: var(--cvsu-surface);
+  color: var(--cvsu-text);
+}
+
+/* ============================================================================
+   Portal Shell: Sidebar, Header, Page Header, Main Content, Footer
+   ============================================================================ */
+.portal-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Fixed Green Left Sidebar */
+.app-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--cvsu-sidebar-width);
+  background-color: var(--cvsu-primary);
+  color: #ffffff;
+  z-index: 1040;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, width 0.22s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.main-sidebar-header {
+  height: var(--cvsu-header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  flex-shrink: 0;
+}
+
+.main-sidebar-header img {
+  max-height: 36px;
+  width: auto;
+}
+
+.main-sidebar {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.85rem 0.65rem 1.5rem;
+}
+
+.main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  margin-bottom: 0.18rem;
+}
+
+.side-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.62rem 0.85rem;
+  border-radius: 0.35rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.85rem;
+  font-weight: 400;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  cursor: pointer;
+}
+
+.side-menu__item:hover,
+.side-menu__item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.side-menu__icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.side-menu__label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.side-menu__angle {
+  width: 0.85rem;
+  height: 0.85rem;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.slide.is-expanded > .side-menu__item .side-menu__angle {
+  transform: rotate(90deg);
+}
+
+.slide-menu {
+  list-style: none;
+  padding: 0.25rem 0 0.25rem 2.25rem;
+  margin: 0;
+  display: none;
+}
+
+.slide.is-expanded > .slide-menu {
+  display: block;
+}
+
+.slide-menu .side-menu__item {
+  padding: 0.44rem 0.65rem;
+  font-size: 0.8125rem;
+  position: relative;
+}
+
+.slide-menu .side-menu__item::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  position: absolute;
+  left: -0.65rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slide-menu .side-menu__item.active::before {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.sidebar-divider {
+  border-color: rgba(255, 255, 255, 0.25);
+  margin: 0.75rem 0.75rem;
+}
+
+/* Top Application Header */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: var(--cvsu-sidebar-width);
+  right: 0;
+  height: var(--cvsu-header-height);
+  background-color: var(--cvsu-surface);
+  border-bottom: 1px solid var(--cvsu-border);
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  transition: left 0.22s ease;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.header-icon-btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.35rem;
+  border: none;
+  background: transparent;
+  color: var(--cvsu-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.header-icon-btn:hover {
+  background-color: var(--cvsu-surface-subtle);
+  color: var(--cvsu-primary);
+}
+
+.header-date {
+  font-size: 0.825rem;
+  color: var(--cvsu-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.header-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  background: transparent;
+  border: none;
+  color: var(--cvsu-text);
+}
+
+.header-profile-btn:hover {
+  background-color: var(--cvsu-surface-subtle);
+}
+
+.avatar-sm {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--cvsu-border);
+}
+
+.avatar-md {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-lg {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(var(--cvsu-primary-rgb), 0.25);
+}
+
+/* Main Content Wrapper */
+.app-content {
+  margin-left: var(--cvsu-sidebar-width);
+  padding-top: var(--cvsu-header-height);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.22s ease;
+}
+
+/* Page Header Breadcrumb Strip (1:1 with CvSU Portal) */
+.page-header {
+  background-color: var(--cvsu-surface);
+  border-bottom: 1px solid var(--cvsu-border);
+  padding: 0.9rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.page-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--cvsu-text);
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+
+.main-container {
+  padding: 0 1.5rem 2.25rem;
+  flex: 1;
+}
+
+/* Footer */
+.portal-footer {
+  margin-left: var(--cvsu-sidebar-width);
+  background-color: var(--cvsu-surface);
+  border-top: 1px solid var(--cvsu-border);
+  padding: 1rem 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--cvsu-text-muted);
+  text-align: center;
+  transition: margin-left 0.22s ease;
+}
+
+/* Sidebar Collapsed State (Desktop) */
+body.sidebar-collapsed .app-sidebar {
+  transform: translateX(-100%);
+}
+
+body.sidebar-collapsed .app-header {
+  left: 0;
+}
+
+body.sidebar-collapsed .app-content,
+body.sidebar-collapsed .portal-footer {
+  margin-left: 0;
+}
+
+/* Mobile Responsive Drawer */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  z-index: 1035;
+}
+
+@media (max-width: 991.98px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+  }
+
+  body.sidebar-mobile-open .app-sidebar {
+    transform: translateX(0);
+  }
+
+  body.sidebar-mobile-open .sidebar-backdrop {
+    display: block;
+  }
+
+  .app-header {
+    left: 0;
+  }
+
+  .app-content,
+  .portal-footer {
+    margin-left: 0;
+  }
+
+  .header-date {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   Authentic CvSU Portal Components (News List, Recent Activity, Tables, Pager)
+   ============================================================================ */
+
+/* Dashboard News & Updates List (1:1 with Sash ul > li.list-item.info) */
+.portal-news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portal-news-list .list-item {
+  position: relative;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--cvsu-info);
+  margin-bottom: 1.15rem;
+}
+
+.portal-news-list .list-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Current Subjects Vertical Activity List (1:1 with Sash ol.recent-activity) */
+ol.recent-activity {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin: 0;
+  position: relative;
+}
+
+ol.recent-activity::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 0.42rem;
+  width: 1px;
+  background-color: var(--cvsu-border);
+}
+
+ol.recent-activity > li.list-item {
+  position: relative;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(233, 237, 244, 0.7);
+}
+
+ol.recent-activity > li.list-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+ol.recent-activity > li.list-item::before {
+  content: "";
+  position: absolute;
+  left: -1.35rem;
+  top: 0.32rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--cvsu-surface);
+  border: 2px solid var(--cvsu-primary);
+}
+
+[data-theme-mode="dark"] ol.recent-activity > li.list-item {
+  border-bottom-color: var(--cvsu-border);
+}
+
+/* Spacious, Calm Tables (1:1 with Grades.html, Checklist, Subjects Offered, Balance) */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--cvsu-text);
+  --bs-table-border-color: var(--cvsu-header-border);
+  --bs-table-hover-bg: var(--cvsu-hover-bg);
+  --bs-table-hover-color: var(--cvsu-text);
+  color: var(--cvsu-text);
+  font-size: 0.85rem;
+  border-color: var(--cvsu-header-border);
+}
+
+.table > :not(caption) > * > * {
+  padding: 0.73rem 0.75rem;
+  vertical-align: middle;
+  border-color: var(--cvsu-header-border);
+}
+
+.table thead th {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--cvsu-text);
+  background-color: transparent;
+  border-bottom-width: 1px;
+  white-space: nowrap;
+}
+
+.table.table-sm > :not(caption) > * > * {
+  padding: 0.55rem 0.65rem;
+}
+
+.table-light,
+.table td.bg-light {
+  --bs-table-bg: var(--cvsu-surface-subtle);
+  --bs-table-color: var(--cvsu-text);
+  --bs-table-hover-bg: #eaeff5;
+  --bs-table-hover-color: var(--cvsu-text);
+  background-color: var(--cvsu-surface-subtle) !important;
+  color: var(--cvsu-text) !important;
+}
+
+[data-theme-mode="dark"] .card {
+  background-color: var(--cvsu-surface);
+  color: var(--cvsu-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme-mode="dark"] .text-muted,
+[data-theme-mode="dark"] .breadcrumb-item.active,
+[data-theme-mode="dark"] .breadcrumb-item + .breadcrumb-item::before,
+[data-theme-mode="dark"] .form-text {
+  color: var(--cvsu-text-muted) !important;
+}
+
+[data-theme-mode="dark"] .text-dark {
+  color: var(--cvsu-text) !important;
+}
+
+[data-theme-mode="dark"] .border,
+[data-theme-mode="dark"] .border-top,
+[data-theme-mode="dark"] .border-bottom {
+  border-color: var(--cvsu-border) !important;
+}
+
+[data-theme-mode="dark"] .form-control:disabled,
+[data-theme-mode="dark"] .form-select:disabled {
+  background-color: #232938;
+  color: var(--cvsu-text-muted);
+  border-color: var(--cvsu-border);
+}
+
+[data-theme-mode="dark"] .btn-light {
+  background-color: #2a3142;
+  border-color: #3a4358;
+  color: var(--cvsu-text);
+}
+
+[data-theme-mode="dark"] .btn-light:hover,
+[data-theme-mode="dark"] .btn-light:focus {
+  background-color: #343d52;
+  border-color: #465068;
+  color: #ffffff;
+}
+
+[data-theme-mode="dark"] .table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--cvsu-text);
+  --bs-table-border-color: var(--cvsu-border);
+  --bs-table-striped-bg: rgba(255, 255, 255, 0.02);
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme-mode="dark"] .table-light,
+[data-theme-mode="dark"] .table td.bg-light {
+  --bs-table-bg: #262c3a;
+  --bs-table-color: #e6eaf2;
+  --bs-table-hover-bg: #2e3647;
+  --bs-table-hover-color: #ffffff;
+  --bs-table-active-bg: #2e3647;
+  --bs-table-active-color: #ffffff;
+  --bs-table-border-color: var(--cvsu-border);
+  background-color: #262c3a !important;
+  color: #e6eaf2 !important;
+}
+
+[data-theme-mode="dark"] .table-hover > tbody > tr.table-light:hover > *,
+[data-theme-mode="dark"] .table-hover > tbody > tr:hover > td.bg-light {
+  --bs-table-bg-state: #2e3647;
+  --bs-table-accent-bg: #2e3647;
+  background-color: #2e3647 !important;
+  color: #ffffff !important;
+}
+
+[data-theme-mode="dark"] .dropdown-menu,
+[data-theme-mode="dark"] .offcanvas,
+[data-theme-mode="dark"] .modal-content,
+[data-theme-mode="dark"] .popover {
+  background-color: var(--cvsu-surface);
+  color: var(--cvsu-text);
+  border-color: var(--cvsu-border);
+}
+
+[data-theme-mode="dark"] .popover-header {
+  background-color: var(--cvsu-surface-subtle);
+  color: var(--cvsu-text);
+  border-bottom-color: var(--cvsu-border);
+}
+
+[data-theme-mode="dark"] .popover-body {
+  color: var(--cvsu-text);
+}
+
+[data-theme-mode="dark"] .dropdown-item {
+  color: var(--cvsu-text);
+}
+
+[data-theme-mode="dark"] .dropdown-item:hover {
+  background-color: var(--cvsu-surface-subtle);
+}
+
+[data-theme-mode="dark"] .alert-light {
+  background-color: var(--cvsu-surface-subtle);
+  border-color: var(--cvsu-border);
+  color: var(--cvsu-text);
+}
+
+[data-theme-mode="dark"] .primary-pagination .page-item.disabled .page-link {
+  background-color: #1a1e28;
+  border-color: var(--cvsu-border);
+  color: #657188;
+}
+
+/* Pagination */
+.primary-pagination .page-link {
+  color: var(--cvsu-primary);
+  border-color: var(--cvsu-border);
+  background-color: var(--cvsu-surface);
+  font-size: 0.8125rem;
+  padding: 0.4rem 0.75rem;
+}
+
+.primary-pagination .page-link:hover {
+  background-color: var(--cvsu-surface-subtle);
+  color: var(--cvsu-primary-dark);
+}
+
+.primary-pagination .page-item.active .page-link {
+  background-color: var(--cvsu-primary);
+  border-color: var(--cvsu-primary);
+  color: #ffffff;
+}
+
+/* KPI Card Helper (Adviser Dashboard) */
+.kpi-card .kpi-label {
+  font-size: 0.85rem;
+  color: var(--cvsu-text-muted);
+  font-weight: 400;
+}
+
+.kpi-card .kpi-value {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--cvsu-text);
+  line-height: 1.3;
+}
+
+/* Scroll to top */
+.scrollToTop {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 0.35rem;
+  background-color: var(--cvsu-primary);
+  color: #ffffff;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1020;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.scrollToTop.show {
+  display: inline-flex;
+}

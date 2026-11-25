@@ -1,0 +1,212 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block content %}
+<!-- Top 3 KPI Row (1:1 with Dashboard.html) -->
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xl-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="flex-grow-1">
+            <p class="mb-0 text-gray-600">Current Academic Year</p>
+            <span class="fs-5">{{ current_ay }}</span>
+          </div>
+          <div class="min-w-fit-content ms-3">
+            <span class="avatar avatar-md br-5 bg-primary-transparent text-primary">
+              <i class="fe fe-calendar fs-18"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xl-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="flex-grow-1">
+            <p class="mb-0 text-gray-600">Current Semester</p>
+            <span class="fs-5">{{ current_sem }}</span>
+          </div>
+          <div class="min-w-fit-content ms-3">
+            <span class="avatar avatar-md br-5 bg-warning-transparent text-warning">
+              <i class="fe fe-list fs-18"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xl-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="flex-grow-1">
+            <p class="mb-0 text-gray-600">
+              Current Status
+              <a
+                href="javascript:void(0)"
+                class="ms-1"
+                data-bs-toggle="popover"
+                data-bs-trigger="focus"
+                data-bs-placement="bottom"
+                title="Current Status"
+                data-bs-content="Enrolled: Registration finalized. Pre-Registration: Irregular BSCS students may build a conflict-free schedule under Pre-Registration. Pending Advising: Awaiting Department Registration Adviser sign-off."
+                aria-label="Current Status"
+              >
+                <i class="fa fa-question-circle-o text-muted"></i>
+              </a>
+            </p>
+            <span class="fs-5">{{ user.enrollment_status }}</span>
+          </div>
+          <div class="min-w-fit-content ms-3">
+            <span class="avatar avatar-md br-5 bg-danger-transparent text-danger">
+              <i class="fe fe-bookmark fs-18"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main 2-Column Row (1:1 with Dashboard.html) -->
+<div class="row">
+  <div class="col-lg-5 col-xl-5">
+    <div class="row">
+      <div class="col-lg-6 col-xl-6">
+        <div class="card custom-card">
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="flex-fill">
+                <p class="mb-1 fs-5 fw-semibold text-default">{{ enrolled_count }}</p>
+                <p class="mb-0 text-muted">Enrolled Subject(s)</p>
+              </div>
+              <div class="ms-3">
+                <span class="avatar avatar-md br-5 bg-info-transparent text-info">
+                  <i class="fe fe-book fs-18"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-xl-6">
+        <div class="card custom-card">
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="flex-fill">
+                <p class="mb-1 fs-5 fw-semibold text-default">{{ "%.2f"|format(user.balance) }}</p>
+                <p class="mb-0 text-muted">Existing Balance</p>
+              </div>
+              <div class="ms-3">
+                <span class="avatar avatar-md br-5 bg-danger-transparent text-danger">
+                  <i class="fe fe-alert-circle fs-18"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Information Card (1:1 with Dashboard.html) -->
+      <div class="col-lg-12 col-xl-12">
+        <div class="card custom-card">
+          <div class="card-header d-block">
+            <div class="d-sm-flex d-block align-items-center">
+              <div class="flex-fill">
+                <a href="/profile">
+                  <span class="fs-15 fw-bold text-default">{{ user.formal_name }}</span>
+                </a>
+              </div>
+              <div class="text-sm-center">
+                <span class="fs-15 fw-bold">{{ user.course_code }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="w-100">
+                <p class="mb-1 fw-semibold">Student Number:</p>
+                <p class="text-muted fs-13 mb-2">{{ user.student_number }}</p>
+
+                <p class="mb-1 fw-semibold">CvSU Email:</p>
+                <p class="text-muted fs-13 mb-2">{{ user.cvsu_email }}</p>
+
+                <p class="mb-1 fw-semibold">Temporary Password:</p>
+                <div class="text-muted fs-13 mb-2">
+                  <details>
+                    <summary style="list-style: none; cursor: pointer;" class="text-muted">Show Password</summary>
+                    <p class="text-muted fs-13 mb-0 mt-1">{{ user.temp_password }}</p>
+                  </details>
+                </div>
+
+                <hr>
+                <p class="text-muted fst-italic fs-13 mb-0">
+                  To log in your cvsu email,
+                  <a href="https://mail.google.com" target="_blank" rel="noopener">click here</a>
+                </p>
+
+                {% if user.student_type == 'Irregular' %}
+                <hr>
+                <p class="text-muted fs-13 mb-0">
+                  Irregular Student Pre-Registration is open.
+                  <a href="/preregistration" class="fw-semibold">Open Pre-Registration</a>
+                </p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column: News and Updates (1:1 with Dashboard.html) -->
+  <div class="col-lg-7 col-xl-7">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">News and Updates</h3>
+      </div>
+      <div class="card-body">
+        <ul class="portal-news-list mb-3">
+          {% for news in news_list %}
+          <li class="list-item info">
+            <div class="d-flex">
+              <div class="ms-2">
+                <p class="mb-0 fs-14">{{ news.title }}</p>
+                <small class="text-muted fs-12">Date Posted: {{ news.date_posted }} | </small>
+                <a href="/dashboard/news/{{ news.id }}" class="text-primary fw-normal fs-13">View Details</a>
+              </div>
+            </div>
+          </li>
+          {% else %}
+          <li class="text-muted fs-13">No campus news updates posted at this time.</li>
+          {% endfor %}
+        </ul>
+
+        {% if news_total_pages > 1 %}
+        <nav aria-label="Page navigation">
+          <ul class="pagination primary-pagination mb-0">
+            <li class="page-item {{ 'disabled' if news_page <= 1 }}">
+              <a class="page-link" href="/dashboard?page={{ news_page - 1 }}">Previous</a>
+            </li>
+            {% for p in range(1, news_total_pages + 1) %}
+            <li class="page-item {{ 'active' if p == news_page }}">
+              <a class="page-link" href="/dashboard?page={{ p }}">{{ p }}</a>
+            </li>
+            {% endfor %}
+            <li class="page-item {{ 'disabled' if news_page >= news_total_pages }}">
+              <a class="page-link" href="/dashboard?page={{ news_page + 1 }}">Next</a>
+            </li>
+          </ul>
+        </nav>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

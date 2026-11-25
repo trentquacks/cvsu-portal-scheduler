@@ -1,0 +1,73 @@
+{% extends "layouts/base_portal.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card">
+      <div class="card-header justify-content-between align-items-center">
+        <p class="mb-0">Assigned Curriculum</p>
+        <div class="card-options">
+          <a href="/checklist/download" class="btn btn-light btn-sm ms-2">
+            <i class="fa fa-download me-1"></i> Download
+          </a>
+        </div>
+      </div>
+      <div class="card-body pt-4">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover mb-3">
+            <tbody>
+              {% for group_title, items in checklist_groups.items() %}
+              <tr>
+                <td class="bg-light" colspan="8">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="text-center fw-semibold" style="margin: 0 auto;">{{ group_title }}</div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="text-center">
+                <td class="border-bottom-0 fw-semibold text-nowrap">Subject Code</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Subject Title</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Units</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Major</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Pre-Requisite</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Grade</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Completion</td>
+                <td class="border-bottom-0 fw-semibold text-nowrap">Remarks</td>
+              </tr>
+              {% for item in items %}
+              <tr class="border-bottom user-list">
+                <td class="text-center text-nowrap" style="width: 10%;">{{ item.code }}</td>
+                <td style="width: 25%;">{{ item.title }}</td>
+                <td class="text-center text-nowrap" style="width: 5%;">{{ "%.2f"|format(item.total_units) }}</td>
+                <td class="text-center text-nowrap" style="width: 10%;">{{ item.major or 'N/A' }}</td>
+                <td class="text-center" style="width: 20%;">
+                  {% if item.prerequisites %}
+                    {{ item.prerequisites|join(', ') }}
+                  {% endif %}
+                </td>
+                <td class="text-center text-nowrap" style="width: 10%;">
+                  {{ item.grade if item.grade and item.grade != '-' else '' }}
+                </td>
+                <td class="text-center text-nowrap" style="width: 10%;">-</td>
+                <td class="text-center text-nowrap" style="width: 10%;">
+                  {% if item.transcript_status == 'PASSED' %}
+                    <span class="badge bg-success">Passed</span>
+                  {% elif item.transcript_status == 'CREDITED' %}
+                    <span class="badge bg-info">Credited</span>
+                  {% elif item.transcript_status == 'FAILED' %}
+                    <span class="badge bg-danger">Failed</span>
+                  {% else %}
+                    <span class="badge bg-danger">X</span>
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
